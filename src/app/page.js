@@ -65,7 +65,7 @@ export default function Home() {
         </div>
 
         <p className="hero-sub">
-          MD Dermatologist & Medical Aesthetics Expert
+         
           <span>MD</span> Dermatologist<br />
           <span>&amp; Medical</span> Aesthetics Expert
         </p>
