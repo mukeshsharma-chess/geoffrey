@@ -109,49 +109,48 @@ export default function HomePage() {
 
      
 {/* Hero */}
-<section className="relative isolate flex h-screen min-h-[720px] w-full max-w-none items-center overflow-hidden bg-[radial-gradient(ellipse_at_72%_48%,#50133f_0%,#260b26_43%,#170818_100%)] px-6 pt-[88px] md:px-[8%]">
+<section className="relative isolate flex min-h-[100svh] w-full items-start overflow-hidden bg-[radial-gradient(ellipse_at_72%_48%,#50133f_0%,#260b26_43%,#170818_100%)] px-6 pt-[110px] pb-[280px] md:h-screen md:min-h-[720px] md:items-center md:px-[8%] md:pt-[88px] md:pb-0">
 
   {/* Background overlay */}
   <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#120414]/20 to-transparent" />
 
   {/* Left Content */}
-  <div className="relative z-20 w-full -translate-y-2 md:w-[65%]">
+  <div className="relative z-20 w-full md:w-[65%] md:-translate-y-2">
 
     {/* Main Heading */}
     <div className="relative">
-    
+      <div className="relative">
 
-    <div className="relative">
-      {/* GEOFFREY - 131px, higher z-index */}
-      <h1 className="relative z-10 font-zapf text-[131px] leading-[124px] font-medium tracking-[0px] uppercase text-white">
-        GEOFFREY
-      </h1>
+        {/* GEOFFREY */}
+        <h1 className="relative z-10 whitespace-nowrap font-zapf text-[clamp(42px,10.5vw,82px)] leading-[0.95] font-medium tracking-normal uppercase text-white md:text-[131px] md:leading-[124px]">
+          GEOFFREY
+        </h1>
 
-      {/* VAZ - 110px, lower z-index */}
-      <span className="absolute left-[63%] top-[62%] z-0 whitespace-nowrap font-zapf text-[clamp(42px,7.16vw,110px)] font-medium leading-[1.13] tracking-normal uppercase bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text text-transparent">
-        VAZ
-      </span>
-    </div>
+        {/* VAZ */}
+        <span className="absolute left-[57%] top-[62%] z-0 whitespace-nowrap font-zapf text-[clamp(40px,9vw,68px)] font-medium leading-[1.13] tracking-normal uppercase bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text text-transparent md:left-[63%] md:top-[62%] md:text-[clamp(42px,7.16vw,110px)]">
+          VAZ
+        </span>
 
+      </div>
     </div>
 
     {/* Subtitle */}
-    <div className="relative z-10 mt-10">
-      <h2 className="font-display bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text text-transparent text-[2rem] leading-[1.25] sm:text-4xl md:text-[2.9rem] lg:text-[3rem]">
+    <div className="relative z-10 mt-8 md:mt-10">
+      <h2 className="font-display bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text text-transparent text-[clamp(27px,6.5vw,44px)] leading-[1.2] md:text-4xl lg:text-[3rem] md:leading-[1.25]">
         MD Dermatologist
         <br />
         &amp; Medical Aesthetics Expert
       </h2>
 
       {/* Experience */}
-      <p className="mt-6 font-sans text-base font-bold uppercase tracking-wider text-white">
+      <p className="mt-6 font-sans text-[15px] font-bold uppercase tracking-wider text-white sm:text-lg md:text-base">
         15+ YEARS <span className="text-sm font-medium">OF EXPERIENCE</span>
       </p>
 
       {/* Consultation */}
       <a
         href="#consult"
-        className="mt-9 inline-flex min-h-[62px] items-center justify-center bg-white px-10 font-sans text-sm font-bold uppercase tracking-wide text-[#101326] shadow-lg transition-all duration-300"
+        className="mt-8 inline-flex min-h-[62px] w-full max-w-[360px] items-center justify-center bg-white px-6 font-sans text-sm font-bold uppercase tracking-wide text-[#101326] shadow-lg transition-all duration-300 md:mt-9 md:w-auto md:px-10"
       >
         Book Consultation
       </a>
@@ -159,18 +158,14 @@ export default function HomePage() {
   </div>
 
   {/* Doctor Image */}
-
-
-{/* Doctor Image */}
-<div className="pointer-events-none absolute bottom-0 right-[12%] z-10 flex h-[92%] w-[55%] items-end justify-center">
-  <img
-    src={photos.hero}
-    alt="Dr. Geoffrey Vaz"
-    fetchPriority="high"
-    className="h-full w-full origin-bottom scale-[2] object-contain object-bottom drop-shadow-2xl"
-  />
-</div>
-
+  <div className="pointer-events-none absolute bottom-0 right-0 z-10 flex h-[43%] w-[62%] items-end justify-end md:right-[12%] md:h-[92%] md:w-[55%] md:justify-center">
+    <img
+      src={photos.hero}
+      alt="Dr. Geoffrey Vaz"
+      fetchPriority="high"
+      className="h-full w-full origin-bottom object-contain object-bottom drop-shadow-2xl md:scale-[2]"
+    />
+  </div>
 
 </section>
 
@@ -305,14 +300,15 @@ export default function HomePage() {
 
 <section
   id="injectables"
-  className="w-full overflow-hidden bg-[#03091b] py-16 md:py-20"
+  className="w-full overflow-hidden bg-[#03091b] py-16 md:py-20 md:pl-[8%]"
 >
-  {/* Heading and navigation */}
-  <div className="mb-12 flex items-center justify-between pl-6 pr-6 md:mb-14 md:pl-[7%] md:pr-[7%]">
+
+  <div className="mb-12 flex items-center justify-between pl-6 pr-6 md:mb-14">
     <h2 className="font-zapf text-[38px] font-medium uppercase leading-tight text-[#eaa274] md:text-[48px]">
       Injectables
     </h2>
 
+  <div className="md:pl-[8%] md:pr-[8%]">
     <div className="flex shrink-0 gap-3">
       <button
         onClick={() => moveCarousel(-1)}
@@ -330,9 +326,9 @@ export default function HomePage() {
         <ArrowRight />
       </button>
     </div>
+    </div>
   </div>
 
-  {/* Full-width carousel */}
   <div
     ref={trackRef}
     className="flex w-full snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pl-6 pr-0 pb-4 md:gap-7 md:pl-[7%] md:pr-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -341,7 +337,7 @@ export default function HomePage() {
       ([title, description, image]) => (
         <article
           key={title}
-          className="group relative h-[400px] w-[85vw] shrink-0 snap-start overflow-hidden bg-[#11172b] sm:w-[65vw] md:h-[490px] md:w-[456px]"
+          className="group relative h-[400px] w-[90vw] shrink-0 snap-start overflow-hidden bg-[#11172b] sm:w-[65vw] md:h-[400px] md:w-[390px]"
         >
           <img
             src={image}
@@ -366,30 +362,186 @@ export default function HomePage() {
     )}
   </div>
 
-  {/* View all */}
   <div className="mt-10 flex justify-center md:mt-12">
     <TextLink>View All Injectables</TextLink>
   </div>
 </section>
 
 
+<section
+  className="relative isolate min-h-[100svh] w-full overflow-hidden bg-[#050b20] bg-inherit bg-center bg-no-repeat"
+  style={{
+    backgroundImage: `url(${photos.face})`,
+  }}
+>
+  {/* Content layered over the full-width background image */}
+  <div className="relative z-10 flex min-h-[100svh] w-full items-center">
+    <div className="ml-auto w-full px-6 py-16 sm:px-10 md:w-[66%] md:py-12 md:pl-0 md:pr-[7.5%]">
 
-      {/* Skin / regenerative feature */}
-      <section className="grid items-center gap-10 bg-[#050b20] px-6 py-20 md:grid-cols-2 md:gap-[5vw] md:px-[7.5%] md:py-28">
-        <div className="h-[330px] overflow-hidden sm:h-[420px] lg:h-[min(48vw,700px)]"><img src={photos.face} alt="Portrait illustrating facial rejuvenation" loading="lazy" className="h-full w-full object-cover" /></div>
-        <div>
-          <Eyebrow>Regenerative aesthetics</Eyebrow>
-          <h2 className="font-display text-4xl uppercase leading-tight text-[#eaa274] sm:text-5xl">Skin That Feels Like You Again</h2>
-          <p className="mt-5 font-display text-lg leading-relaxed text-[#e0dce5]">Learn about treatment options designed to support skin quality and a refreshed appearance. Your plan should be based on an in-person assessment and your individual goals.</p>
-          <div className="my-8 grid gap-3 sm:grid-cols-3">
-            {[["01", "Cheeks", "Discuss facial volume, skin quality, and treatment goals."], ["02", "Smile Lines", "Review options for the appearance of facial folds."], ["03", "Lower Face", "Explore a personalized approach to lower-face balance."]].map(([n, title, copy]) => <article key={n} className="min-h-44 bg-white/[.08] p-5"><span className="mb-5 block text-xl text-[#eaa274]">{n}</span><h3 className="font-sans text-sm font-semibold uppercase text-[#eaa274]">{title}</h3><p className="mt-2 font-display text-sm leading-relaxed text-[#c3bdca]">{copy}</p></article>)}
+      <h2 className="font-display text-[clamp(30px,3vw,48px)] uppercase leading-[1.2] text-[#eaa274]">
+        Skin That Feels Like You Again
+      </h2>
+
+      <p className="mt-5 max-w-[1000px] font-display text-base leading-relaxed text-[#e0dce5] md:text-lg">
+        Not just another filler. Sculptra is a biostimulatory aesthetic
+        injectable that helps stimulate your own natural collagen production
+        to smooth facial wrinkles and improve skin tightness, revealing a
+        refreshed-looking you.
+      </p>
+
+      <div className="my-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          [
+            "01",
+            "Sculptra",
+            "Restore natural collagen and improve skin quality for firmer, glowing skin in the entire cheek region. Help tighten skin along the cheeks and jawline.",
+          ],
+          [
+            "02",
+            "Rich PL",
+            "Soften and improve smile lines by gradually reducing the appearance of facial folds and wrinkles.",
+          ],
+          [
+            "03",
+            "HArmonyCa",
+            "Smooth the lines that run from your mouth to your chin.",
+          ],
+          [
+            "04",
+            "Skin Boosters",
+            "Smooth the lines that run from your mouth to your chin.",
+          ],
+          [
+            "05",
+            "PDRN",
+            "Smooth the lines that run from your mouth to your chin.",
+          ],
+        ].map(([number, title, description]) => (
+          <article
+            key={number}
+            className="flex min-h-[190px] flex-col bg-white/[0.09] p-5 md:min-h-[250px]"
+          >
+            <span className="mb-5 block text-2xl text-[#eaa274]">
+              {number}
+            </span>
+
+            <h3 className="mb-2 font-sans text-lg font-semibold text-[#eaa274]">
+              {title}
+            </h3>
+
+            <p className="font-display text-base leading-relaxed text-[#e0dce5]">
+              {description}
+            </p>
+          </article>
+        ))}
+      </div>
+
+      <TextLink>Explore Sculptra</TextLink>
+    </div>
+  </div>
+</section>
+
+
+
+<section className="w-full bg-[#03091b] px-6 py-16 text-[#e5e1e9] sm:px-10 md:px-[7.5%] md:py-24">
+  <div className="mx-auto grid max-w-[1600px] items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-[5vw]">
+
+    {/* Left Content */}
+    <div className="w-full">
+      <h2 className="mb-7 font-display text-4xl uppercase leading-tight text-[#eaa274] md:text-5xl">
+        Face
+      </h2>
+
+      <div className="space-y-4 font-display text-base leading-[1.65] text-[#c9c5d0] md:text-lg">
+        <p>
+          Dr. geoffrey is putting Philadelphia body contouring on the map
+          with his unique and innovative approach to anatomical re-sculpting.
+          Internationally recognized as “Tuck Daddy”®, Dr. Subbio is globally
+          revered for his transformative Mommy Makeovers, high-definition
+          360° liposuction, and muscle-repair abdominoplasties.
+        </p>
+
+        <p>
+          Having traveled across global aesthetic capitals to master the
+          world’s most refined subcutaneous suture methods, his patients
+          experience minimal tension lines, natural belly-button restorations,
+          and breathtaking hourglass proportions.
+        </p>
+      </div>
+
+      {/* Face Categories */}
+      <div className="mt-10 space-y-1">
+        {[
+          {
+            title: "Upper face",
+            description:
+              "Short-scar muscle plication and organic belly button preservation.",
+          },
+          {
+            title: "Mid face",
+            description:
+              "Cohesive breast reconstruction with circumferential abdominal contouring.",
+          },
+          {
+            title: "Lower Face",
+            description:
+              "Subdermal muscular etching, flank sculpting, and autologous fat transfer.",
+          },
+        ].map((item) => (
+          <button
+            key={item.title}
+            type="button"
+            className="group flex w-full items-center justify-between gap-4 border-b border-white/0 py-5 text-left"
+          >
+            <span>
+              <span className="block font-sans text-lg text-[#e4dfe9] md:text-xl">
+                {item.title}
+              </span>
+              <span className="mt-1 block font-display text-sm leading-relaxed text-[#858493] md:text-base">
+                {item.description}
+              </span>
+            </span>
+
+            <span className="shrink-0 text-2xl text-[#eaa274] transition-transform group-hover:translate-x-1">
+              ›
+            </span>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    {/* Right Image Card */}
+    <div className="relative mx-auto w-full max-w-[670px] bg-[#f2f0fb] p-[10px] pt-[32px] sm:p-[18px] sm:pt-[40px]">
+      <div className="relative aspect-[1.18/1] w-full overflow-hidden bg-[#17172b]">
+        <img
+          src={photos.model}
+          alt="Model showcasing aesthetic body contouring results"
+          loading="lazy"
+          className="h-full w-full object-cover object-center"
+        />
+
+        {/* Image Caption */}
+        <div className="absolute bottom-0 left-0 right-0 bg-[#03091b]/95 px-5 py-6 sm:px-7">
+          <div className="flex items-center justify-between gap-4">
+            <p className="font-display text-base text-[#e5e1e9] sm:text-lg md:text-xl">
+              Mommy Makeover • 9-Month Follow-Up
+            </p>
+
+            <span className="shrink-0 text-2xl text-[#eaa274]">
+              →
+            </span>
           </div>
-          <TextLink>Explore Treatments</TextLink>
         </div>
-      </section>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
 
       {/* Body */}
-      <section id="body" className="grid items-center gap-12 bg-[#03091b] px-6 py-20 md:grid-cols-[1fr_.95fr] md:gap-[6vw] md:px-[7.5%] md:py-28">
+      {/* <section id="body" className="grid items-center gap-12 bg-[#03091b] px-6 py-20 md:grid-cols-[1fr_.95fr] md:gap-[6vw] md:px-[7.5%] md:py-28">
         <div>
           <Eyebrow>Sculpted with intention</Eyebrow>
           <h2 className="font-display text-4xl uppercase text-[#eaa274] sm:text-5xl">Body &amp; Contouring</h2>
@@ -403,7 +555,7 @@ export default function HomePage() {
           <img src={photos.model} alt="Body contouring editorial" loading="lazy" className="h-full w-full object-cover" />
           <a href="#consult" className="absolute bottom-4 left-4 right-4 flex items-center justify-between bg-[#050b20] p-5 text-sm">Explore body procedures <ArrowRight className="text-[#eaa274]" /></a>
         </div>
-      </section>
+      </section> */}
 
       {/* Breast */}
       <section id="breast" className="bg-[#03091b] px-6 py-20 text-center md:px-[7.5%] md:py-28">
@@ -419,7 +571,7 @@ export default function HomePage() {
       </section>
 
       {/* Lasers */}
-      <section id="lasers" className="relative grid items-center gap-10 bg-[#10142b] bg-cover bg-center px-6 py-20 md:grid-cols-[.9fr_1.1fr] md:gap-[5vw] md:px-[7.5%] md:py-28" style={{ backgroundImage: `linear-gradient(rgba(3,8,27,.88),rgba(3,8,27,.88)),url(${photos.skin})` }}>
+      {/* <section id="lasers" className="relative grid items-center gap-10 bg-[#10142b] bg-cover bg-center px-6 py-20 md:grid-cols-[.9fr_1.1fr] md:gap-[5vw] md:px-[7.5%] md:py-28" style={{ backgroundImage: `linear-gradient(rgba(3,8,27,.88),rgba(3,8,27,.88)),url(${photos.skin})` }}>
         <div>
           <Eyebrow>Advanced skin technology</Eyebrow>
           <h2 className="font-display text-5xl uppercase text-[#eaa274]">Lasers</h2>
@@ -429,22 +581,175 @@ export default function HomePage() {
         <div className="grid gap-4 sm:grid-cols-2">
           {laserTreatments.map(([title, copy]) => <article key={title} className="min-h-44 bg-[#1c1f35]/85 p-6 backdrop-blur-md"><h3 className="font-sans text-lg font-semibold uppercase">{title}</h3><p className="mt-3 font-display text-base leading-relaxed text-[#c4bfcc]">{copy}</p></article>)}
         </div>
-      </section>
+      </section> */}
+
+      <section
+  id="skin"
+  className="relative isolate min-h-[850px] w-full overflow-hidden bg-[#03091b] px-6 py-20 md:min-h-[900px] md:px-[7.5%] md:py-24"
+>
+  {/* Background image */}
+  <div className="absolute inset-0 -z-20">
+    <img
+      src={photos.skin}
+      alt=""
+      aria-hidden="true"
+      className="h-full w-full object-cover object-center"
+    />
+  </div>
+
+  {/* Dark overlay */}
+  <div className="absolute inset-0 -z-10 bg-[#03091b]/80" />
+
+  {/* Content */}
+  <div className="grid items-center gap-12 md:min-h-[650px] md:grid-cols-[1.45fr_0.9fr] md:gap-[5.5vw]">
+
+    {/* Left: Skin treatments */}
+    <div className="grid grid-cols-1 gap-x-10 sm:grid-cols-2">
+      {[
+        {
+          title: "IPL (Intense Pulsated Light)",
+          description:
+            "Subdermal adipose remodeling with radiofrequency microneedling.",
+        },
+        {
+          title: "CHEMICAL PEELS",
+          description:
+            "Medical-grade TCA & Jessner peels targeting dermal pigmentation.",
+        },
+        {
+          title: "DERMAFRAC",
+          description:
+            "Vortex-fusion extraction and peptide infusion hydration therapy.",
+        },
+        {
+          title: "HYDRAFACIAL",
+          description:
+            "Vortex-fusion extraction and peptide infusion hydration therapy.",
+        },
+        {
+          title: "RF",
+          description:
+            "Vortex-fusion extraction and peptide infusion hydration therapy.",
+        },
+        {
+          title: "MNRF",
+          description:
+            "SkinPen automated induction with PRP blood concentrates.",
+        },
+        {
+          title: "MICRONEEDLING",
+          description:
+            "Vortex-fusion extraction and peptide infusion hydration therapy.",
+        },
+      ].map((item) => (
+        <div
+          key={item.title}
+          className="border-b border-white/70 py-5 md:py-6"
+        >
+          <h3 className="font-sans text-xl font-semibold uppercase leading-tight tracking-wide text-white md:text-[25px]">
+            {item.title}
+          </h3>
+
+          <p className="mt-3 max-w-[390px] font-display text-base leading-[1.45] text-[#c5c2cd] md:text-lg">
+            {item.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    {/* Right: Skin introduction */}
+    <div className="md:pl-2">
+      <h2 className="font-display text-5xl uppercase leading-none text-[#eaa274] md:text-[52px]">
+        Skin
+      </h2>
+
+      <p className="mt-7 font-display text-lg leading-[1.5] text-[#d5d1dc] md:text-xl">
+        The team at Subbio Plastic Surgery provides bespoke skin
+        rejuvenation treatments to help patients in the greater
+        Philadelphia area achieve balanced, dewy skin and a timeless
+        aesthetic texture.
+      </p>
+
+      <TextLink>Skin Treatments</TextLink>
+    </div>
+  </div>
+</section>
+
+
 
       {/* Wellness */}
-      <section id="wellness" className="grid items-center gap-10 bg-[#03091b] px-6 py-20 md:grid-cols-2 md:gap-[5vw] md:px-[7.5%] md:py-28">
-        <div>
-          <Eyebrow>Whole-person care</Eyebrow>
-          <h2 className="font-display text-5xl uppercase text-[#eaa274]">Wellness</h2>
-          <p className="mt-5 font-display text-lg leading-relaxed text-[#e0dce5]">Learn about physician-guided wellness services and recovery support. Any medication-based program requires a medical evaluation, discussion of risks, and ongoing supervision.</p>
-          <div className="my-8 bg-black/25 p-6">
-            <h3 className="mb-4 font-sans text-sm font-semibold uppercase tracking-widest text-[#eaa274]">Areas to Explore</h3>
-            <ul className="grid gap-3 text-sm text-[#e0dce5] sm:grid-cols-2">{["Weight-management consultation", "Nutrition and lifestyle support", "Recovery and rehabilitation planning", "Regenerative wellness consultation"].map(item => <li key={item} className="flex gap-2"><CheckCircle2 size={17} className="shrink-0 text-[#eaa274]" />{item}</li>)}</ul>
-          </div>
-          <TextLink>Wellness Consultation</TextLink>
-        </div>
-        <div className="h-[330px] overflow-hidden sm:h-[480px]"><img src={photos.wellness} alt="Wellness editorial portrait" loading="lazy" className="h-full w-full object-cover" /></div>
-      </section>
+
+
+<section
+  id="wellness"
+  className="w-full bg-[#03091b] px-6 py-16 sm:px-10 md:px-[7.5%] md:py-24"
+>
+  <div className="mx-auto grid max-w-[1600px] items-center gap-12 md:grid-cols-2 md:gap-[5vw]">
+
+    {/* LEFT CONTENT */}
+    <div className="w-full">
+      <h2 className="font-display text-4xl uppercase leading-tight text-[#eaa274] md:text-5xl">
+        Wellness
+      </h2>
+
+      <p className="mt-6 font-display text-base leading-[1.5] text-[#d0ccd6] md:text-lg">
+        Wellness treatments are on the rise globally, with research on how
+        to help patients live longer, be healthier, and recover faster from
+        surgical interventions. Subbio Plastic Surgery remains at the
+        forefront of integrative wellness, helping patients achieve healthy
+        vitality through physician-supervised weight loss management and
+        regenerative protocols.
+      </p>
+
+      {/* KEY CLINICAL PROGRAMS */}
+      <div className="mt-7 bg-black/25 px-6 py-6 md:px-7">
+        <h3 className="mb-5 font-sans text-lg font-semibold uppercase tracking-[0.12em] text-[#eaa274]">
+          Key Clinical Programs
+        </h3>
+
+        <ul className="grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2">
+          {[
+            "Physician-supervised wellness",
+            "Weight management",
+            "Regenerative protocols",
+            "Semaglutide / GLP-1",
+            "Tirzepatide",
+            "NAD+ Cellular Infusions",
+          ].map((item) => (
+            <li
+              key={item}
+              className="flex items-center gap-2.5 font-display text-sm text-[#ded9e2] md:text-base"
+            >
+              <CheckCircle2
+                size={17}
+                className="shrink-0 text-[#eaa274]"
+              />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* CTA */}
+      <div className="mt-8">
+        <TextLink>Semaglutide &amp; Peptide</TextLink>
+      </div>
+    </div>
+
+    {/* RIGHT IMAGE */}
+    <div className="relative h-[380px] w-full overflow-hidden sm:h-[480px] md:h-[min(40.5vw,584px)]">
+      <img
+        src={photos.wellness}
+        alt="Wellness editorial portrait"
+        loading="lazy"
+        className="h-full w-full object-cover object-center"
+      />
+    </div>
+
+  </div>
+</section>
+
+
 
       {/* Results */}
       <section id="results" className="bg-[#03091b] px-6 py-20 text-center md:px-[7.5%] md:py-28">
@@ -457,7 +762,7 @@ export default function HomePage() {
       </section>
 
       {/* Academy / skin treatments */}
-      <section id="academy" className="grid items-center gap-12 bg-cover bg-center px-6 py-20 md:grid-cols-2 md:gap-[6vw] md:px-[11%] md:py-28" style={{ backgroundImage: `linear-gradient(rgba(3,8,27,.9),rgba(3,8,27,.92)),url(${photos.skin})` }}>
+      {/* <section id="academy" className="grid items-center gap-12 bg-cover bg-center px-6 py-20 md:grid-cols-2 md:gap-[6vw] md:px-[11%] md:py-28" style={{ backgroundImage: `linear-gradient(rgba(3,8,27,.9),rgba(3,8,27,.92)),url(${photos.skin})` }}>
         <div className="grid gap-x-8 sm:grid-cols-2">
           {skinTreatments.map(([title, copy]) => <article key={title} className="border-b border-white/50 py-5"><h3 className="font-sans text-base font-semibold uppercase">{title}</h3><p className="mt-2 font-display text-sm leading-relaxed text-[#c3bdca]">{copy}</p></article>)}
         </div>
@@ -467,10 +772,10 @@ export default function HomePage() {
           <p className="mt-5 font-display text-lg leading-relaxed text-[#e0dce5]">Discover personalized skin-care services and educational resources. Treatment selection should be guided by a qualified clinician.</p>
           <TextLink>Skin Treatments</TextLink>
         </div>
-      </section>
+      </section> */}
 
       {/* Consultation */}
-      <section id="consult" className="bg-[#0b1025] px-6 py-20 md:px-[7.5%] md:py-28">
+      {/* <section id="consult" className="bg-[#0b1025] px-6 py-20 md:px-[7.5%] md:py-28">
         <Eyebrow>Start a conversation</Eyebrow>
         <h2 className="font-display text-4xl uppercase text-[#eaa274] sm:text-5xl">Book a Consultation</h2>
         <p className="mt-5 max-w-3xl font-display text-lg leading-relaxed text-[#e0dce5]">Tell us how to reach you and which area you would like to discuss. Please do not include private medical details in this form.</p>
@@ -484,15 +789,84 @@ export default function HomePage() {
           {formSent && <p role="status" className="flex items-center gap-2 text-sm text-[#eaa274]"><CheckCircle2 size={18} /> Form UI submitted. Connect this form to your API or secure form service to receive inquiries.</p>}
         </form>
         <p className="mt-5 text-xs text-[#c3bdca]">Connect this form to your preferred secure intake workflow before publishing.</p>
-      </section>
+      </section> */}
 
+
+ <footer className="w-full overflow-hidden bg-[#03091b] text-[#f4f2f5]">
+  <div className="px-[6.8%] pt-[100px] pb-10">
+
+    {/* Top footer columns */}
+    <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-[10%]">
+
+      {/* Social links */}
+      <div>
+        <h3 className="mb-8 font-display text-[38px] font-normal leading-none">
+          FOLLOW ME
+        </h3>
+
+        <div className="max-w-[250px] space-y-5">
+          {[
+            ["LinkedIn", "#"],
+            ["Instagram", "#"],
+            ["Twitter", "#"],
+            ["YouTube", "#"],
+          ].map(([name, href]) => (
+            <a
+              key={name}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-between font-sans text-[21px] font-normal text-[#c5c5d0] transition-colors hover:text-white"
+            >
+              <span>{name}</span>
+              <span className="text-[27px] leading-none">↗</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Footer navigation */}
+      <nav className="w-full">
+        {[
+          ["HOME", "#top", "01"],
+          ["ABOUT", "#about", "02"],
+          ["SERVICES", "#services", "03"],
+          ["CONTACT", "#contact", "04"],
+        ].map(([name, href, number]) => (
+          <a
+            key={name}
+            href={href}
+            className="flex items-center justify-between border-b border-[#42434e] py-[13px] transition-colors hover:text-[#eaa274]"
+          >
+            <span className="font-sans text-[27px] font-medium tracking-[0.09em] leading-none">
+              {name}
+            </span>
+
+            <span className="font-sans text-[22px] font-normal text-[#92939e]">
+              {number}
+            </span>
+          </a>
+        ))}
+      </nav>
+    </div>
+
+    {/* Large footer name */}
+    <div className="mt-[105px] w-full">
+      <h2
+        className="whitespace-nowrap bg-gradient-to-b from-[#d7d8df] via-[#9b9da7] to-[#03091b] bg-clip-text text-center font-display text-[clamp(65px,10.8vw,220px)] font-normal uppercase leading-[0.85] tracking-[-0.045em] text-transparent"
+      >
+        GEOFFREY VAZ
+      </h2>
+    </div>
+  </div>
+</footer>
       {/* Footer */}
-      <footer className="border-t border-[#eaa274]/30 bg-[#020614] px-6 py-16 text-center md:px-[7.5%]">
+      {/* <footer className="border-t border-[#eaa274]/30 bg-[#020614] px-6 py-16 text-center md:px-[7.5%]">
         <a href="#top" className="font-display text-2xl italic tracking-wider">Dr. Geoffrey Vaz</a>
         <p className="mx-auto mt-4 max-w-xl font-display text-base text-[#e0dce5]">Individualized aesthetic care. Informed decisions. Thoughtful outcomes.</p>
         <div className="my-8 flex flex-col justify-center gap-5 font-sans text-xs uppercase tracking-widest sm:flex-row sm:gap-8"><a href="#about" className="hover:text-[#eaa274]">About</a><a href="#consult" className="hover:text-[#eaa274]">Contact</a><a href="#consult" className="hover:text-[#eaa274]">Book Consultation</a></div>
         <small className="text-xs text-[#9895a5]">© {new Date().getFullYear()} Geoffrey Vaz. All rights reserved. Website content is informational and is not a substitute for medical advice.</small>
-      </footer>
+      </footer> */}
     </main>
   );
 }
