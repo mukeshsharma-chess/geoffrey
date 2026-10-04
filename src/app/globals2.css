@@ -19,6 +19,13 @@
    TAILWIND THEME
 ======================================== */
 
+/* @theme {
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-zapf: "Zapf Humanist 601", sans-serif;
+} */
+
+
 @theme {
   --font-sans: "Zapf Humanist 601", sans-serif;
   --font-display: "Playfair Display", Georgia, serif;
@@ -37,9 +44,7 @@ body {
   margin: 0;
   background: #280C24;
   color: #f6f2f5;
-  font-family: "Zapf Humanist 601", sans-serif;
-  font-weight: 500;
-  font-style: normal;
+  font-family: "DM Sans", sans-serif;
 }
 
 * {
@@ -85,19 +90,24 @@ body {
    TYPOGRAPHY UTILITIES
 ======================================== */
 
-/* Default font - Zapf Humanist 601 */
+/* DM Sans - Default body font */
 
-.font-sans,
+.font-sans {
+  font-family: "DM Sans", sans-serif;
+}
+
+/* Playfair Display - Display font */
+
+.font-display {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+/* Zapf Humanist 601 - Figma heading font */
+
 .font-zapf {
   font-family: "Zapf Humanist 601", sans-serif;
   font-weight: 500;
   font-style: normal;
-}
-
-/* Optional Playfair Display */
-
-.font-display {
-  font-family: "Playfair Display", Georgia, serif;
 }
 
 /* ========================================
