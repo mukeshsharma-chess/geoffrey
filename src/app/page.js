@@ -205,32 +205,12 @@ export default function HomePage() {
 
 
 
-<section
-  id="about"
-  className="
-    mt-8
-    mb-[10px]
-    grid
-    w-full
-    bg-[#03091b]
-    grid-cols-1
-    gap-10
-    px-6
-    py-12
-
-    lg:mt-[40px]
-    lg:mb-[10px]
-    lg:grid-cols-[637px_1fr]
-    lg:gap-0
-    lg:px-0
-    lg:py-0
-  "
->
+<section id="about" className="mt-[1px] mb-[10px] grid w-full bg-[#03091b] grid-cols-1 gap-4 p-[15px] lg:mt-[40px] lg:mb-[10px] lg:grid-cols-[637px_1fr] lg:gap-0 lg:px-0 lg:py-0">
   {/* ================= LEFT IMAGE ================= */}
   <div
     className="
       relative
-      h-[500px]
+      h-[300px]
       w-full
       overflow-hidden
 
@@ -274,7 +254,7 @@ export default function HomePage() {
       <h2
         className="
           font-zapf
-          text-[clamp(30px,3vw,48px)]
+          text-[clamp(24px,3vw,48px)]
           font-medium
           uppercase
           leading-[1.15]
@@ -288,18 +268,17 @@ export default function HomePage() {
       {/* Quote */}
       <blockquote
         className="
-          mt-8
+          mt-5
           border-l-2
           border-[#eaa274]
           bg-[#11172b]
           px-7
           py-4
           font-sans
-          text-[16px]
-          leading-[1.45]
-          text-[#e0dce5]
+          text-[14px] leading-[1.45] text-[#e0dce5] md:py-4 md:text-[16px] md:mt-8
         "
       >
+
         “Precision is my discipline, and subtlety is my signature.
         I want you to look like yourself, at your best.”
       </blockquote>
@@ -307,11 +286,9 @@ export default function HomePage() {
       {/* Paragraph 1 */}
       <p
         className="
-          mt-8
+          mt-5
           font-zapf
-          text-[18px]
-          leading-[1.55]
-          text-[#e0dce5]
+          text-[14px] leading-[1.45] text-[#e0dce5] md:text-[18px] md:mt-8
         "
       >
         Facial Aesthetic Specialist and national and international
@@ -322,11 +299,9 @@ export default function HomePage() {
       {/* Paragraph 2 */}
       <p
         className="
-          mt-6
+          mt-4
           font-zapf
-          text-[18px]
-          leading-[1.55]
-          text-[#e0dce5]
+          text-[14px] leading-[1.45] text-[#e0dce5] md:text-[18px] 
         "
       >
         Mentored by global leaders Dr. Arthur Swift, Dr. Woffles Wu,
@@ -342,11 +317,9 @@ export default function HomePage() {
       {/* Paragraph 3 */}
       <p
         className="
-          mt-6
+          mt-4
           font-zapf
-          text-[18px]
-          leading-[1.55]
-          text-[#e0dce5]
+          text-[14px] leading-[1.45] text-[#e0dce5] md:text-[18px]
         "
       >
         A former footballer and athlete, he applies discipline and
@@ -361,11 +334,9 @@ export default function HomePage() {
       {/* Paragraph 4 */}
       <p
         className="
-          mt-6
+          mt-4
           font-zapf
-          text-[18px]
-          leading-[1.55]
-          text-[#e0dce5]
+          text-[14px] leading-[1.45] text-[#e0dce5] md:text-[18px]
         "
       >
         His insight into human behavior enriches his approach,
@@ -377,19 +348,21 @@ export default function HomePage() {
     {/* ================= SIGNATURE ================= */}
     <div
       className="
-        mt-10
+        mt-6
         text-left
 
         lg:mt-8
         lg:text-right
+        md:mt-10
     "
     >
       <p
         className="
           font-zapf
-          text-[28px]
           leading-tight
+          text-[clamp(20px,3vw,28px)]
           text-[#eaa274]
+          md:text-[28px]
         "
       >
         <span className="mr-2">—</span>
@@ -421,7 +394,7 @@ export default function HomePage() {
 >
   {/* Section Heading */}
   <div className="mx-auto mb-9 max-w-5xl text-center">
-    <h2 className="font-zapf text-[32px] font-medium uppercase leading-tight tracking-wide text-[#eaa274] sm:text-4xl md:text-[46px]">
+    <h2 className="font-zapf text-[24px] font-medium uppercase leading-tight tracking-wide text-[#eaa274] sm:text-4xl md:text-[46px] ">
       Training With Doctor
     </h2>
 
@@ -487,11 +460,11 @@ export default function HomePage() {
 
 <section
   id="injectables"
-  className="w-full overflow-hidden bg-[#03091b] py-16 md:py-20 md:pl-[8%]"
+  className="w-full overflow-hidden bg-[#03091b] py-7 md:py-20 md:pl-[8%]"
 >
 
-  <div className="mb-12 flex items-center justify-between pl-6 pr-6 md:mb-14">
-    <h2 className="font-zapf text-[38px] font-medium uppercase leading-tight text-[#eaa274] md:text-[48px]">
+  <div className="mb-8 flex items-center justify-between pl-6 pr-6 md:mb-14">
+    <h2 className="font-zapf text-[28px] font-medium uppercase leading-tight text-[#eaa274] md:text-[48px]">
       Injectables
     </h2>
 
@@ -500,7 +473,7 @@ export default function HomePage() {
       <button
         onClick={() => moveCarousel(-1)}
         aria-label="Previous treatments"
-        className="grid h-12 w-12 place-items-center rounded-full bg-white text-[#101326] transition hover:bg-[#eaa274] md:h-14 md:w-14"
+        className="grid h-10 w-10 place-items-center rounded-full bg-white text-[#101326] transition hover:bg-[#eaa274] md:h-14 md:w-14"
       >
         <ArrowLeft />
       </button>
@@ -508,7 +481,7 @@ export default function HomePage() {
       <button
         onClick={() => moveCarousel(1)}
         aria-label="Next treatments"
-        className="grid h-12 w-12 place-items-center rounded-full bg-white text-[#101326] transition hover:bg-[#eaa274] md:h-14 md:w-14"
+        className="grid h-10 w-10 place-items-center rounded-full bg-white text-[#101326] transition hover:bg-[#eaa274] md:h-14 md:w-14"
       >
         <ArrowRight />
       </button>
@@ -524,7 +497,7 @@ export default function HomePage() {
       ([title, description, image]) => (
         <article
           key={title}
-          className="group relative h-[400px] w-[90vw] shrink-0 snap-start overflow-hidden bg-[#11172b] sm:w-[65vw] md:h-[400px] md:w-[390px]"
+          className="group relative h-[250px] w-[90vw] shrink-0 snap-start overflow-hidden bg-[#11172b] sm:w-[65vw] md:h-[400px] md:w-[390px]"
         >
           <img
             src={image}
@@ -563,9 +536,9 @@ export default function HomePage() {
 >
   {/* Content layered over the full-width background image */}
   <div className="relative z-10 flex min-h-[100svh] w-full items-center">
-    <div className="ml-auto w-full px-6 py-16 sm:px-10 md:w-[66%] md:py-12 md:pl-0 md:pr-[7.5%]">
+    <div className="ml-auto w-full px-6 py-10 sm:px-10 md:w-[66%] md:py-12 md:pl-0 md:pr-[7.5%]">
 
-      <h2 className="font-zapf text-[clamp(30px,3vw,48px)] uppercase leading-[1.2] text-[#eaa274]">
+      <h2 className="font-zapf text-[clamp(24px,3vw,48px)] uppercase leading-[1.2] text-[#eaa274]">
         Skin That Feels Like You Again
       </h2>
 
@@ -633,7 +606,7 @@ export default function HomePage() {
     w-full
     bg-[#03091b]
     px-6
-    py-16
+    py-10
     text-[#e5e1e9]
 
     sm:px-10
@@ -659,13 +632,13 @@ export default function HomePage() {
       {/* Heading */}
       <h2
         className="
-          mb-8
+          mb-4
           font-zapf
-          text-[42px]
+          text-[24px]
           uppercase
           leading-none
           text-[#eaa274]
-
+          md:mb-8
           md:text-[50px]
         "
       >
@@ -1004,7 +977,7 @@ export default function HomePage() {
 
     {/* RIGHT */}
     <div className="pt-2 lg:pt-8">
-      <h2 className="font-zapf text-[48px] uppercase leading-none text-[#eaa274] md:text-[52px]">
+      <h2 className="font-zapf text-[24px] uppercase leading-none text-[#eaa274] md:text-[52px]">
         Lasers
       </h2>
 
@@ -1078,7 +1051,7 @@ export default function HomePage() {
     <div className="w-full">
 
       {/* Heading */}
-      <h2 className="font-zapf text-4xl uppercase leading-tight text-[#eaa274] md:text-[50px]">
+      <h2 className="font-zapf text-[24px] uppercase leading-tight text-[#eaa274] md:text-[50px]">
         Wellness
       </h2>
 
@@ -1233,7 +1206,7 @@ export default function HomePage() {
       <h2
         className="
           font-zapf
-          text-[40px]
+          text-[24px]
           font-medium
           uppercase
           leading-none
@@ -1550,7 +1523,7 @@ export default function HomePage() {
       <h2
         className="
           font-zapf
-          text-4xl
+          text-[24px]
           uppercase
           leading-tight
           text-[#eaa274]
@@ -1794,8 +1767,6 @@ export default function HomePage() {
         flex-col
         justify-center
         bg-[#020718]
-        px-7
-        py-10
         sm:px-10
         md:min-h-[616px]
         md:px-[3.2vw]
@@ -1807,7 +1778,7 @@ export default function HomePage() {
       <h2
         className="
           font-zapf
-          text-[40px]
+          text-[24px]
           uppercase
           leading-none
           text-[#eaa274]
