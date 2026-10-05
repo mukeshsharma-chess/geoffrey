@@ -1,12 +1,10 @@
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
-
 @import "tailwindcss";
 
 /* ========================================
    CUSTOM FONTS
 ======================================== */
 
+/* PRIMARY — Zapf Humanist 601 */
 @font-face {
   font-family: "Zapf Humanist 601";
   src: url("/fonts/ZapfHumanist601.woff2") format("woff2");
@@ -15,15 +13,34 @@
   font-display: swap;
 }
 
+/* SECONDARY — Trade Gothic LT Std Regular */
+@font-face {
+  font-family: "Trade Gothic LT Std";
+  src: url("/fonts/TradeGothicLTStdRegular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* SECONDARY — Trade Gothic LT Std Bold */
+@font-face {
+  font-family: "Trade Gothic LT Std";
+  src: url("/fonts/TradeGothicLTStdBold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 /* ========================================
    TAILWIND THEME
 ======================================== */
 
 @theme {
-  --font-sans: "Zapf Humanist 601", sans-serif;
-  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Trade Gothic LT Std", sans-serif;
   --font-zapf: "Zapf Humanist 601", sans-serif;
 }
+
 
 /* ========================================
    ROOT & BODY
@@ -37,14 +54,20 @@ body {
   margin: 0;
   background: #280C24;
   color: #f6f2f5;
-  font-family: "Zapf Humanist 601", sans-serif;
-  font-weight: 500;
+  font-family: "Trade Gothic LT Std", sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
+
+
+/* ========================================
+   BOX SIZING
+======================================== */
 
 * {
   box-sizing: border-box;
 }
+
 
 /* ========================================
    GEOFFREY VAZ BRAND COLORS
@@ -81,24 +104,34 @@ body {
   --gv-text-dark: #280C24;
 }
 
+
 /* ========================================
-   TYPOGRAPHY UTILITIES
+   TYPOGRAPHY
 ======================================== */
 
-/* Default font - Zapf Humanist 601 */
-
-.font-sans,
+/* PRIMARY FONT */
 .font-zapf {
   font-family: "Zapf Humanist 601", sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
-/* Optional Playfair Display */
 
-.font-display {
-  font-family: "Playfair Display", Georgia, serif;
+/* SECONDARY FONT */
+.font-sans {
+  font-family: "Trade Gothic LT Std", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
+
+
+/* SECONDARY FONT — BOLD */
+.font-sans.font-bold {
+  font-family: "Trade Gothic LT Std", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 
 /* ========================================
    GRADIENT TEXT
@@ -116,6 +149,16 @@ body {
   color: transparent;
 }
 
+
+/* ========================================
+   LINKS
+======================================== */
+
+a {
+  text-decoration: none;
+}
+
+
 /* ========================================
    TEXT SELECTION
 ======================================== */
@@ -124,6 +167,7 @@ body {
   background: #B74DAA;
   color: #FFFFFF;
 }
+
 
 /* ========================================
    FORM FIELDS
@@ -152,4 +196,34 @@ body {
 select.form-field option {
   background: #35102f;
   color: white;
+}
+
+/* @keyframes media-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-media-scroll {
+  animation: media-scroll 28s linear infinite;
+  will-change: transform;
+} */
+
+@keyframes media-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-media-scroll {
+  animation: media-scroll 30s linear infinite;
+  will-change: transform;
 }

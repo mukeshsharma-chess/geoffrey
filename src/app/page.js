@@ -12,6 +12,8 @@ const photos = {
   inject1: "/images/carosule.jpg",
   inject2: "/images/carosule1.jpg",
   inject3: "/images/carosule2.jpg",
+  inject4: "/images/lip.png",
+  inject5: "/images/naseltrip.png",
   face: "/images/fivethsection.png",
   face2: "/images/face.png",
   laser: "/images/lASERS.jpg",
@@ -23,24 +25,25 @@ const photos = {
 };
 
 const mediaLogos = [
-  { src: "/images/media/vogue.png", alt: "Vogue" },
-  { src: "/images/media/peaklife.png", alt: "PeakLife" },
-  { src: "/images/media/vogue.png", alt: "Vogue" },
-  { src: "/images/media/chronicle.png", alt: "Chronicle" },
-  { src: "/images/media/grazia.png", alt: "Grazia" },
-  { src: "/images/media/cosmopolitan.png", alt: "Cosmopolitan" },
-  { src: "/images/media/hindustan-times.png", alt: "Hindustan Times" },
-  { src: "/images/media/economic-times.png", alt: "Economic Times" },
-  { src: "/images/media/bazaar.png", alt: "Bazaar" },
-  { src: "/images/media/freepress.png", alt: "Free Press Journal" },
-  { src: "/images/media/pod.png", alt: "The Pod" },
+  { src: "/brands/vogue.png", alt: "Vogue" },
+  { src: "/brands/peaklife.png", alt: "PeakLife" },
+  { src: "/brands/vogue.png", alt: "Vogue" },
+  { src: "/brands/chronicle.png", alt: "Chronicle" },
+  { src: "/brands/grazia.png", alt: "Grazia" },
+  { src: "/brands/cosmopolitan.png", alt: "Cosmopolitan" },
+  { src: "/brands/hindustan-times.png", alt: "Hindustan Times" },
+  { src: "/brands/economic-times.png", alt: "Economic Times" },
+  { src: "/brands/bazaar.png", alt: "Bazaar" },
+  { src: "/brands/freepress.png", alt: "Free Press Journal" },
+  { src: "/brands/pod.png", alt: "The Pod" },
 ];
 
 const injectables = [
-  ["BOTOX & WRINKLE RELAXER", "Botox®, Dysport®, and Daxxify® micro-dosed to soften forehead bands, crow’s feet, and gummy smiles while preserving natural human expression.", photos.inject1],
-  ["BARBIETOX & CALF TOX", "A personalized approach to proportion and contour, planned around your anatomy, goals, and clinical assessment.", photos.inject2],
-  ["FACIAL BALANCING & JAWLINE", "Thoughtful facial balancing focused on proportion, structure, and harmony.", photos.inject3],
-  ["LIP AUGMENTATION", "Thoughtful, balanced enhancement designed to complement your natural features.", photos.inject2],
+  ["BOTOX & WRINKLE RELAXER", "Soften expression lines, smooth wrinkles, and achieve a naturally refreshed, youthful appearance with precision wrinkle-relaxing treatments.", photos.inject1],
+  ["BARBIETOX & CALF TOX", "Refine body contours with targeted muscle-relaxing treatments designed to create a more elongated, graceful silhouette and subtly slimmer calves.", photos.inject2],
+  ["Facial Balancing & Jawline", "Enhance facial harmony and define the jawline with precision treatments tailored to your natural proportions for a refined, balanced appearance.", photos.inject3],
+  ["Lip Architecture & Contou", "Sculpt and refine the lips with precise attention to proportion, structure, contour, and symmetry for a naturally elegant result.", photos.inject4],
+  ["Nasal Tip and Nasal Flare", "Refine the nasal tip and soften nasal flare with precise, minimally invasive treatments designed to enhance nasal definition while preserving natural facial harmony.", photos.inject5]
 ];
 
 const skinTreatments = [
@@ -166,12 +169,8 @@ export default function HomePage() {
       </p>
 
       {/* Consultation */}
-      <a
-        href="#consult"
-        className="mt-8 inline-flex min-h-[62px] w-full max-w-[360px] items-center justify-center bg-white px-6 font-sans text-sm font-bold uppercase tracking-wide text-[#101326] shadow-lg transition-all duration-300 md:mt-9 md:w-auto md:px-10"
-      >
-        Book Consultation
-      </a>
+      <a href="#consult" className="mt-5 inline-flex h-[57px] w-[280px] items-center justify-center bg-white px-9 py-5 font-sans text-sm font-bold uppercase tracking-wide text-[#101326] shadow-lg transition-all duration-300">
+        Book Consultation</a>
     </div>
   </div>
 
@@ -187,17 +186,17 @@ export default function HomePage() {
 
 </section>
 
-<section className="w-full overflow-hidden bg-[#03091b] py-5">
-  <div className="flex w-max animate-[media-scroll_28s_linear_infinite]">
+<section className="w-full overflow-hidden bg-[#03091b] py-4">
+  <div className="flex w-max items-center animate-media-scroll">
     {[...mediaLogos, ...mediaLogos].map((logo, index) => (
       <div
         key={`${logo.alt}-${index}`}
-        className="flex h-[70px] w-[180px] shrink-0 items-center justify-center px-6"
+        className="flex h-[70px] min-w-[190px] shrink-0 items-center justify-center px-5 md:min-w-[210px] md:px-6"
       >
         <img
           src={logo.src}
           alt={logo.alt}
-          className="max-h-[48px] max-w-[160px] object-contain"
+          className="block max-h-[58px] w-auto max-w-[190px] object-contain brightness-0 invert"
         />
       </div>
     ))}
@@ -209,19 +208,19 @@ export default function HomePage() {
 <section
   id="about"
   className="
-    my-8
+    mt-8
+    mb-[10px]
     grid
     w-full
     bg-[#03091b]
-
     grid-cols-1
     gap-10
-
     px-6
     py-12
 
-    lg:my-[60px]
-    lg:grid-cols-[45%_55%]
+    lg:mt-[40px]
+    lg:mb-[10px]
+    lg:grid-cols-[637px_1fr]
     lg:gap-0
     lg:px-0
     lg:py-0
@@ -235,19 +234,21 @@ export default function HomePage() {
       w-full
       overflow-hidden
 
-      lg:h-screen
+      lg:h-[708px]
+      lg:w-[637px]
     "
   >
     <img
       src={photos.doctor}
       alt="Dr. Geoffrey Vaz at his clinic"
+      loading="lazy"
       className="
+        block
         h-full
         w-full
         object-cover
         object-center
       "
-      loading="lazy"
     />
   </div>
 
@@ -262,11 +263,12 @@ export default function HomePage() {
       px-0
       py-0
 
+      lg:h-[708px]
       lg:px-[7%]
       lg:py-[3%]
     "
   >
-    {/* TOP CONTENT */}
+    {/* ================= TOP CONTENT ================= */}
     <div>
       {/* Heading */}
       <h2
@@ -306,7 +308,7 @@ export default function HomePage() {
       <p
         className="
           mt-8
-          font-display
+          font-zapf
           text-[18px]
           leading-[1.55]
           text-[#e0dce5]
@@ -321,7 +323,7 @@ export default function HomePage() {
       <p
         className="
           mt-6
-          font-display
+          font-zapf
           text-[18px]
           leading-[1.55]
           text-[#e0dce5]
@@ -341,7 +343,7 @@ export default function HomePage() {
       <p
         className="
           mt-6
-          font-display
+          font-zapf
           text-[18px]
           leading-[1.55]
           text-[#e0dce5]
@@ -360,7 +362,7 @@ export default function HomePage() {
       <p
         className="
           mt-6
-          font-display
+          font-zapf
           text-[18px]
           leading-[1.55]
           text-[#e0dce5]
@@ -378,9 +380,9 @@ export default function HomePage() {
         mt-10
         text-left
 
-        lg:mt-12
+        lg:mt-8
         lg:text-right
-      "
+    "
     >
       <p
         className="
@@ -415,7 +417,7 @@ export default function HomePage() {
 {/* Training With Doctor Section */}
 <section
   id="training"
-  className="w-full bg-[#03091b] px-6 pb-16 pt-10 md:px-[7.5%] md:pb-20 md:pt-10"
+  className="w-full bg-[#03091b] px-6 pb-16 pt-10 md:px-[7.5%] md:pb-20 md:pt-30"
 >
   {/* Section Heading */}
   <div className="mx-auto mb-9 max-w-5xl text-center">
@@ -423,7 +425,7 @@ export default function HomePage() {
       Training With Doctor
     </h2>
 
-    <p className="mx-auto mt-5 max-w-5xl font-display text-base leading-relaxed text-[#d8d5df] sm:text-lg">
+    <p className="mx-auto mt-5 max-w-5xl font-zapf text-base leading-relaxed text-[#d8d5df] sm:text-lg">
       Not just another filler. Sculptra is a biostimulatory aesthetic
       injectable that helps stimulate your own natural collagen
       production to smooth facial wrinkles and improve skin tightness,
@@ -538,7 +540,7 @@ export default function HomePage() {
               {title}
             </h3>
 
-            <p className="font-display text-[15px] leading-[1.5] text-[#f0eaf2] md:text-base">
+            <p className="font-zapf text-[15px] leading-[1.5] text-[#f0eaf2] md:text-base">
               {description}
             </p>
           </div>
@@ -547,9 +549,9 @@ export default function HomePage() {
     )}
   </div>
 
-  <div className="mt-10 flex justify-center md:mt-12">
+  {/* <div className="mt-10 flex justify-center md:mt-12">
     <TextLink>View All Injectables</TextLink>
-  </div>
+  </div> */}
 </section>
 
 
@@ -563,7 +565,7 @@ export default function HomePage() {
   <div className="relative z-10 flex min-h-[100svh] w-full items-center">
     <div className="ml-auto w-full px-6 py-16 sm:px-10 md:w-[66%] md:py-12 md:pl-0 md:pr-[7.5%]">
 
-      <h2 className="font-display text-[clamp(30px,3vw,48px)] uppercase leading-[1.2] text-[#eaa274]">
+      <h2 className="font-zapf text-[clamp(30px,3vw,48px)] uppercase leading-[1.2] text-[#eaa274]">
         Skin That Feels Like You Again
       </h2>
 
@@ -579,49 +581,45 @@ export default function HomePage() {
           [
             "01",
             "Sculptra",
-            "Restore natural collagen and improve skin quality for firmer, glowing skin in the entire cheek region. Help tighten skin along the cheeks and jawline.",
+            "Stimulates your skin's own collagen to rebuild volume gradually, for a soft, natural lift that keeps improving over weeks.",
           ],
           [
             "02",
             "Rich PL",
-            "Soften and improve smile lines by gradually reducing the appearance of facial folds and wrinkles.",
+            "Improves skin density, texture and resilience from within for a firmer, healthier finish.",
           ],
           [
             "03",
             "HArmonyCa",
-            "Smooth the lines that run from your mouth to your chin.",
+            "Combines hyaluronic acid and calcium hydroxylapatite for an immediate lift and contour, with collagen stimulation that continues over time.",
           ],
           [
             "04",
             "Skin Boosters",
-            "Smooth the lines that run from your mouth to your chin.",
+            "Replenish hydration and enhance skin quality from within, improving radiance, texture, elasticity, and overall skin health for a fresh, luminous finish.",
           ],
           [
             "05",
             "PDRN",
-            "Smooth the lines that run from your mouth to your chin.",
+            "Harness regenerative skin-repair technology to support collagen, hydration, texture, and elasticity, restoring a healthier, more youthful-looking complexion",
           ],
         ].map(([number, title, description]) => (
           <article
             key={number}
-            className="flex min-h-[190px] flex-col bg-white/[0.09] p-5 md:min-h-[250px]"
+            className="flex min-h-[190px] flex-col bg-white/[0.09] p-5 md:min-h-[210px]"
           >
-            <span className="mb-5 block text-2xl text-[#eaa274]">
-              {number}
-            </span>
-
             <h3 className="mb-2 font-sans text-lg font-semibold text-[#eaa274]">
               {title}
             </h3>
 
-            <p className="font-display text-base leading-relaxed text-[#e0dce5]">
+            <p className="font-zapf text-base leading-relaxed text-[#e0dce5]">
               {description}
             </p>
           </article>
         ))}
       </div>
 
-      <TextLink>Explore Sculptra</TextLink>
+      {/* <TextLink>Explore Sculptra</TextLink> */}
     </div>
   </div>
 </section>
@@ -662,7 +660,7 @@ export default function HomePage() {
       <h2
         className="
           mb-8
-          font-display
+          font-zapf
           text-[42px]
           uppercase
           leading-none
@@ -678,7 +676,7 @@ export default function HomePage() {
       <p
         className="
           max-w-[760px]
-          font-display
+          font-zapf
           text-[17px]
           leading-[1.55]
           text-[#d0ccd5]
@@ -956,7 +954,7 @@ export default function HomePage() {
           PICO
         </h3>
 
-        <p className="mt-3 font-display text-[16px] leading-[1.45] text-[#c9c5d0] md:text-[17px]">
+        <p className="mt-3 font-zapf text-[16px] leading-[1.45] text-[#c9c5d0] md:text-[17px]">
           Harness ultra-short picosecond pulses to target pigmentation
           and improve skin tone, texture, and clarity with minimal
           downtime and precision along with tattoo removal.
@@ -969,7 +967,7 @@ export default function HomePage() {
           CO2
         </h3>
 
-        <p className="mt-3 font-display text-[16px] leading-[1.45] text-[#c9c5d0] md:text-[17px]">
+        <p className="mt-3 font-zapf text-[16px] leading-[1.45] text-[#c9c5d0] md:text-[17px]">
           Resurface and renew the skin with precision CO₂ laser
           technology to improve scars, wrinkles, pigmentation,
           texture, and overall skin quality.
@@ -982,7 +980,7 @@ export default function HomePage() {
           EXCIMER LASER
         </h3>
 
-        <p className="mt-3 font-display text-[16px] leading-[1.45] text-[#c9c5d0] md:text-[17px]">
+        <p className="mt-3 font-zapf text-[16px] leading-[1.45] text-[#c9c5d0] md:text-[17px]">
           Targeted 308 nm phototherapy that precisely treats localized
           skin conditions such as vitiligo, atopic dermatitis and
           psoriasis while minimizing exposure to surrounding healthy
@@ -996,7 +994,7 @@ export default function HomePage() {
           DIODE
         </h3>
 
-        <p className="mt-3 font-display text-[16px] leading-[1.45] text-[#c9c5d0] md:text-[17px]">
+        <p className="mt-3 font-zapf text-[16px] leading-[1.45] text-[#c9c5d0] md:text-[17px]">
           Advanced laser technology for effective, long-lasting hair
           reduction by precisely targeting hair follicles while
           protecting the surrounding skin.
@@ -1006,11 +1004,11 @@ export default function HomePage() {
 
     {/* RIGHT */}
     <div className="pt-2 lg:pt-8">
-      <h2 className="font-display text-[48px] uppercase leading-none text-[#eaa274] md:text-[52px]">
+      <h2 className="font-zapf text-[48px] uppercase leading-none text-[#eaa274] md:text-[52px]">
         Lasers
       </h2>
 
-      <p className="mt-7 max-w-[700px] font-display text-[18px] leading-[1.45] text-[#e0dce5] md:text-[19px]">
+      <p className="mt-7 max-w-[700px] font-zapf text-[18px] leading-[1.45] text-[#e0dce5] md:text-[19px]">
         Advanced laser technology that treats pigmentation, scars,
         hair and chronic skin conditions with precision and minimal
         downtime.
@@ -1069,70 +1067,6 @@ export default function HomePage() {
            {/* Wellness */}
 
 
-{/* <section
-  id="wellness"
-  className="w-full bg-[#03091b] px-6 py-16 sm:px-10 md:px-[7.5%] md:py-24"
->
-  <div className="mx-auto grid max-w-[1600px] items-center gap-12 md:grid-cols-2 md:gap-[5vw]">
-
-    <div className="w-full">
-      <h2 className="font-display text-4xl uppercase leading-tight text-[#eaa274] md:text-5xl">
-        Wellness
-      </h2>
-
-      <p className="mt-6 font-display text-base leading-[1.5] text-[#d0ccd6] md:text-lg">
-        Wellness treatments are on the rise globally, with research on how
-        to help patients live longer, be healthier, and recover faster from
-        surgical interventions. Subbio Plastic Surgery remains at the
-        forefront of integrative wellness, helping patients achieve healthy
-        vitality through physician-supervised weight loss management and
-        regenerative protocols.
-      </p>
-
-      <div className="mt-7 bg-black/25 px-6 py-6 md:px-7">
-        <h3 className="mb-5 font-sans text-lg font-semibold uppercase tracking-[0.12em] text-[#eaa274]">
-          Key Clinical Programs
-        </h3>
-
-        <ul className="grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2">
-          {[
-            "Physician-supervised wellness",
-            "Weight management",
-            "Regenerative protocols",
-            "Semaglutide / GLP-1",
-            "Tirzepatide",
-            "NAD+ Cellular Infusions",
-          ].map((item) => (
-            <li
-              key={item}
-              className="flex items-center gap-2.5 font-display text-sm text-[#ded9e2] md:text-base"
-            >
-              <CheckCircle2
-                size={17}
-                className="shrink-0 text-[#eaa274]"
-              />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="mt-8">
-        <TextLink>Semaglutide &amp; Peptide</TextLink>
-      </div>
-    </div>
-
-    <div className="relative h-[380px] w-full overflow-hidden sm:h-[480px] md:h-[min(40.5vw,584px)]">
-      <img
-        src={photos.wellness}
-        alt="Wellness editorial portrait"
-        loading="lazy"
-        className="h-full w-full object-cover object-center"
-      />
-    </div>
-
-  </div>
-</section> */}
 
 <section
   id="wellness"
@@ -1144,7 +1078,7 @@ export default function HomePage() {
     <div className="w-full">
 
       {/* Heading */}
-      <h2 className="font-display text-4xl uppercase leading-tight text-[#eaa274] md:text-[50px]">
+      <h2 className="font-zapf text-4xl uppercase leading-tight text-[#eaa274] md:text-[50px]">
         Wellness
       </h2>
 
@@ -1153,11 +1087,11 @@ export default function HomePage() {
 
         {/* Physician-supervised wellness */}
         <div>
-          <h3 className="font-sans text-[20px] font-semibold leading-tight tracking-wide text-white md:text-[22px]">
+          <h3 className="font-zapf text-[20px] font-semibold leading-tight tracking-wide text-white md:text-[22px]">
             Physician-supervised wellness
           </h3>
 
-          <p className="mt-2 max-w-[700px] font-display text-[16px] leading-[1.45] text-[#9d9aa7] md:text-[17px]">
+          <p className="mt-2 max-w-[700px] font-zapf text-[16px] leading-[1.45] text-[#9d9aa7] md:text-[17px]">
             Personalized, evidence-based wellness programs guided by a
             physician to support healthy ageing, vitality, metabolic health,
             and overall well-being.
@@ -1166,11 +1100,11 @@ export default function HomePage() {
 
         {/* Weight management */}
         <div>
-          <h3 className="font-sans text-[20px] font-semibold leading-tight tracking-wide text-white md:text-[22px]">
+          <h3 className="font-zapf text-[20px] font-semibold leading-tight tracking-wide text-white md:text-[22px]">
             Weight management
           </h3>
 
-          <p className="mt-2 max-w-[700px] font-display text-[16px] leading-[1.45] text-[#9d9aa7] md:text-[17px]">
+          <p className="mt-2 max-w-[700px] font-zapf text-[16px] leading-[1.45] text-[#9d9aa7] md:text-[17px]">
             Personalized, physician-guided weight management focused on
             sustainable results, metabolic health, and long-term well-being.
           </p>
@@ -1178,11 +1112,11 @@ export default function HomePage() {
 
         {/* Regenerative protocols */}
         <div>
-          <h3 className="font-sans text-[20px] font-semibold leading-tight tracking-wide text-white md:text-[22px]">
+          <h3 className="font-zapf text-[20px] font-semibold leading-tight tracking-wide text-white md:text-[22px]">
             Regenerative protocols
           </h3>
 
-          <p className="mt-2 max-w-[700px] font-display text-[16px] leading-[1.45] text-[#9d9aa7] md:text-[17px]">
+          <p className="mt-2 max-w-[700px] font-zapf text-[16px] leading-[1.45] text-[#9d9aa7] md:text-[17px]">
             Physician-led therapies that support the body's natural repair
             processes, recovery and long-term vitality.
           </p>
@@ -1190,11 +1124,11 @@ export default function HomePage() {
 
         {/* Semaglutide / GLP-1 / Tirzepatide */}
         <div>
-          <h3 className="font-sans text-[20px] font-semibold leading-tight tracking-wide text-white md:text-[22px]">
+          <h3 className="font-zapf text-[20px] font-semibold leading-tight tracking-wide text-white md:text-[22px]">
             Semaglutide / GLP-1 / Tirzepatide
           </h3>
 
-          <p className="mt-2 max-w-[700px] font-display text-[16px] leading-[1.45] text-[#9d9aa7] md:text-[17px]">
+          <p className="mt-2 max-w-[700px] font-zapf text-[16px] leading-[1.45] text-[#9d9aa7] md:text-[17px]">
             Physician-guided GLP-1 and tirzepatide therapies to support
             medically supervised weight management, metabolic health,
             and sustainable lifestyle goals.
@@ -1203,11 +1137,11 @@ export default function HomePage() {
 
         {/* NAD+ Cellular Infusions */}
         <div>
-          <h3 className="font-sans text-[20px] font-semibold leading-tight tracking-wide text-white md:text-[22px]">
+          <h3 className="font-zapf text-[20px] font-semibold leading-tight tracking-wide text-white md:text-[22px]">
             NAD+ Cellular Infusions
           </h3>
 
-          <p className="mt-2 max-w-[700px] font-display text-[16px] leading-[1.45] text-[#9d9aa7] md:text-[17px]">
+          <p className="mt-2 max-w-[700px] font-zapf text-[16px] leading-[1.45] text-[#9d9aa7] md:text-[17px]">
             Physician-supervised cellular wellness infusions designed to
             support energy metabolism, cellular function, recovery, and
             healthy ageing.
@@ -1235,96 +1169,353 @@ export default function HomePage() {
 
 <section
   id="skin"
-  className="relative isolate min-h-[850px] w-full overflow-hidden bg-[#03091b] px-6 py-20 md:min-h-[900px] md:px-[7.5%] md:py-24"
+  className="
+    relative
+    isolate
+    h-auto
+    min-h-[850px]
+    w-full
+    overflow-hidden
+    bg-[#03091b]
+    px-6
+    py-16
+
+    sm:px-10
+
+    md:h-[870px]
+    md:min-h-0
+    md:px-[7.5%]
+    md:py-[105px]
+  "
 >
-  {/* Background image */}
+  {/* ================= BACKGROUND IMAGE ================= */}
   <div className="absolute inset-0 -z-20">
     <img
       src={photos.skin}
       alt=""
       aria-hidden="true"
-      className="h-full w-full object-cover object-center"
+      className="
+        absolute
+        inset-0
+        h-full
+        w-full
+        object-cover
+        object-center
+      "
     />
   </div>
 
-  {/* Dark overlay */}
-  <div className="absolute inset-0 -z-10 bg-[#03091b]/80" />
+  {/* ================= FIGMA DARK OVERLAY ================= */}
+  <div
+    className="
+      absolute
+      inset-0
+      -z-10
+      bg-[#03091b]/80
+    "
+  />
 
-  {/* Content */}
-  <div className="grid items-center gap-12 md:min-h-[650px] md:grid-cols-[1.45fr_0.9fr] md:gap-[5.5vw]">
+  {/* ================= CONTENT ================= */}
+  <div
+    className="
+      relative
+      z-10
+      mx-auto
+      flex
+      h-full
+      w-full
+      max-w-[1240px]
+      flex-col
+    "
+  >
+    {/* ================= SKIN HEADING ================= */}
+    <div className="w-full text-center">
+      <h2
+        className="
+          font-zapf
+          text-[40px]
+          font-medium
+          uppercase
+          leading-none
+          tracking-normal
+          text-[#eaa274]
 
-    {/* Left: Skin treatments */}
-    <div className="grid grid-cols-1 gap-x-10 sm:grid-cols-2">
-      {[
-        {
-          title: "IPL (Intense Pulsated Light)",
-          description:
-            "Subdermal adipose remodeling with radiofrequency microneedling.",
-        },
-        {
-          title: "CHEMICAL PEELS",
-          description:
-            "Medical-grade TCA & Jessner peels targeting dermal pigmentation.",
-        },
-        {
-          title: "DERMAFRAC",
-          description:
-            "Vortex-fusion extraction and peptide infusion hydration therapy.",
-        },
-        {
-          title: "HYDRAFACIAL",
-          description:
-            "Vortex-fusion extraction and peptide infusion hydration therapy.",
-        },
-        {
-          title: "RF",
-          description:
-            "Vortex-fusion extraction and peptide infusion hydration therapy.",
-        },
-        {
-          title: "MNRF",
-          description:
-            "SkinPen automated induction with PRP blood concentrates.",
-        },
-        {
-          title: "MICRONEEDLING",
-          description:
-            "Vortex-fusion extraction and peptide infusion hydration therapy.",
-        },
-      ].map((item) => (
-        <div
-          key={item.title}
-          className="border-b border-white/70 py-5 md:py-6"
-        >
-          <h3 className="font-sans text-xl font-semibold uppercase leading-tight tracking-wide text-white md:text-[25px]">
-            {item.title}
-          </h3>
-
-          <p className="mt-3 max-w-[390px] font-display text-base leading-[1.45] text-[#c5c2cd] md:text-lg">
-            {item.description}
-          </p>
-        </div>
-      ))}
-    </div>
-
-    {/* Right: Skin introduction */}
-    <div className="md:pl-2">
-      <h2 className="font-display text-5xl uppercase leading-none text-[#eaa274] md:text-[52px]">
+          sm:text-[46px]
+          md:text-[52px]
+        "
+      >
         Skin
       </h2>
 
-      <p className="mt-7 font-display text-lg leading-[1.5] text-[#d5d1dc] md:text-xl">
-        The team at Subbio Plastic Surgery provides bespoke skin
-        rejuvenation treatments to help patients in the greater
-        Philadelphia area achieve balanced, dewy skin and a timeless
-        aesthetic texture.
-      </p>
+      <p
+        className="
+          mx-auto
+          mt-7
+          max-w-[800px]
+          font-zapf
+          text-[16px]
+          font-normal
+          leading-[1.45]
+          text-[#d5d1dc]
 
-      <TextLink>Skin Treatments</TextLink>
+          sm:text-[17px]
+          md:text-[20px]
+        "
+      >
+        Advanced, physician-led treatments that improve texture,
+        clarity and firmness, so your
+        <br className="hidden md:block" />
+        skin looks healthy and feels like you.
+      </p>
+    </div>
+
+    {/* ================= TREATMENTS ================= */}
+    <div
+      className="
+        mx-auto
+        mt-[50px]
+        grid
+        w-full
+        max-w-[1080px]
+        grid-cols-1
+        gap-x-[70px]
+        gap-y-[48px]
+
+        sm:grid-cols-2
+
+        md:mt-[50px]
+        md:gap-x-[70px]
+        md:gap-y-[48px]
+      "
+    >
+      {/* ================= IPL ================= */}
+      <div>
+        <h3
+          className="
+            font-sans
+            text-[19px]
+            font-bold
+            uppercase
+            leading-[1.1]
+            tracking-[0.02em]
+            text-[#eaa274]
+
+            md:text-[24px]
+          "
+        >
+          IPL (Intense Pulsated Light)
+        </h3>
+
+        <p
+          className="
+            mt-3
+            max-w-[530px]
+            font-zapf
+            text-[15px]
+            font-normal
+            leading-[1.45]
+            text-[#c5c2cd]
+
+            md:text-[17px]
+          "
+        >
+          Harness broad-spectrum light technology to target rosacea,
+          skin rejuvenation, pigmentation, redness, unwanted hair,
+          and uneven skin tone for a clearer, more radiant complexion.
+        </p>
+      </div>
+
+      {/* ================= CHEMICAL PEELS ================= */}
+      <div>
+        <h3
+          className="
+            font-sans
+            text-[19px]
+            font-bold
+            uppercase
+            leading-[1.1]
+            tracking-[0.02em]
+            text-[#eaa274]
+
+            md:text-[24px]
+          "
+        >
+          Chemical Peels
+        </h3>
+
+        <p
+          className="
+            mt-3
+            max-w-[530px]
+            font-zapf
+            text-[15px]
+            font-normal
+            leading-[1.45]
+            text-[#c5c2cd]
+
+            md:text-[17px]
+          "
+        >
+          Medically tailored exfoliation treatments that renew the
+          skin, refine texture, reduce acne pigmentation, and restore
+          a smoother, more radiant complexion.
+        </p>
+      </div>
+
+      {/* ================= HYDRAFACIAL ================= */}
+      <div>
+        <h3
+          className="
+            font-sans
+            text-[19px]
+            font-bold
+            uppercase
+            leading-[1.1]
+            tracking-[0.02em]
+            text-[#eaa274]
+
+            md:text-[24px]
+          "
+        >
+          Hydrafacial
+        </h3>
+
+        <p
+          className="
+            mt-3
+            max-w-[530px]
+            font-zapf
+            text-[15px]
+            font-normal
+            leading-[1.45]
+            text-[#c5c2cd]
+
+            md:text-[17px]
+          "
+        >
+          A multi-step skin-renewal treatment suitable for most skin
+          types, including dull, dehydrated, congested, or uneven
+          skin, combining deep cleansing, exfoliation, extraction,
+          and hydration for a smoother, clearer, more radiant
+          complexion.
+        </p>
+      </div>
+
+      {/* ================= DERMAFRAC ================= */}
+      <div>
+        <h3
+          className="
+            font-sans
+            text-[19px]
+            font-bold
+            uppercase
+            leading-[1.1]
+            tracking-[0.02em]
+            text-[#eaa274]
+
+            md:text-[24px]
+          "
+        >
+          Dermafrac
+        </h3>
+
+        <p
+          className="
+            mt-3
+            max-w-[530px]
+            font-zapf
+            text-[15px]
+            font-normal
+            leading-[1.45]
+            text-[#c5c2cd]
+
+            md:text-[17px]
+          "
+        >
+          A minimally invasive skin-renewal treatment combining
+          microneedling and targeted serum infusion to improve
+          hydration, texture, pigmentation, and overall skin
+          radiance.
+        </p>
+      </div>
+
+      {/* ================= MICRONEEDLING RADIOFREQUENCY ================= */}
+      <div>
+        <h3
+          className="
+            font-sans
+            text-[19px]
+            font-bold
+            uppercase
+            leading-[1.1]
+            tracking-[0.02em]
+            text-[#eaa274]
+
+            md:text-[24px]
+          "
+        >
+          Microneedling Radiofrequency
+        </h3>
+
+        <p
+          className="
+            mt-3
+            max-w-[530px]
+            font-zapf
+            text-[15px]
+            font-normal
+            leading-[1.45]
+            text-[#c5c2cd]
+
+            md:text-[17px]
+          "
+        >
+          Microneedling Radiofrequency (MNRF) stimulates deep collagen
+          remodeling to improve acne scars, enlarged pores, skin
+          texture, and firmness with controlled, precise energy
+          delivery.
+        </p>
+      </div>
+
+      {/* ================= RADIO FREQUENCY ================= */}
+      <div>
+        <h3
+          className="
+            font-sans
+            text-[19px]
+            font-bold
+            uppercase
+            leading-[1.1]
+            tracking-[0.02em]
+            text-[#eaa274]
+
+            md:text-[24px]
+          "
+        >
+          Radio Frequency
+        </h3>
+
+        <p
+          className="
+            mt-3
+            max-w-[530px]
+            font-zapf
+            text-[15px]
+            font-normal
+            leading-[1.45]
+            text-[#c5c2cd]
+
+            md:text-[17px]
+          "
+        >
+          Controlled radiofrequency energy gently heats the deeper
+          skin layers to stimulate collagen remodeling, improve
+          firmness, and create a smoother, tighter appearance.
+        </p>
+      </div>
     </div>
   </div>
 </section>
-
 
 <section
   id="dermat"
@@ -1358,7 +1549,7 @@ export default function HomePage() {
       {/* Heading */}
       <h2
         className="
-          font-display
+          font-zapf
           text-4xl
           uppercase
           leading-tight
@@ -1392,7 +1583,7 @@ export default function HomePage() {
             className="
               mt-2
               max-w-[700px]
-              font-display
+              font-zapf
               text-[16px]
               leading-[1.45]
               text-[#9d9aa7]
@@ -1424,7 +1615,7 @@ export default function HomePage() {
             className="
               mt-2
               max-w-[700px]
-              font-display
+              font-zapf
               text-[16px]
               leading-[1.45]
               text-[#9d9aa7]
@@ -1456,7 +1647,7 @@ export default function HomePage() {
             className="
               mt-2
               max-w-[700px]
-              font-display
+              font-zapf
               text-[16px]
               leading-[1.45]
               text-[#9d9aa7]
@@ -1489,7 +1680,7 @@ export default function HomePage() {
             className="
               mt-2
               max-w-[700px]
-              font-display
+              font-zapf
               text-[16px]
               leading-[1.45]
               text-[#9d9aa7]
@@ -1615,7 +1806,7 @@ export default function HomePage() {
       {/* Heading */}
       <h2
         className="
-          font-display
+          font-zapf
           text-[40px]
           uppercase
           leading-none
@@ -1649,7 +1840,7 @@ export default function HomePage() {
           <p
             className="
               mt-1.5
-              font-display
+              font-zapf
               text-[15px]
               leading-[1.35]
               text-[#92909d]
@@ -1680,7 +1871,7 @@ export default function HomePage() {
           <p
             className="
               mt-1.5
-              font-display
+              font-zapf
               text-[15px]
               leading-[1.35]
               text-[#92909d]
@@ -1711,7 +1902,7 @@ export default function HomePage() {
           <p
             className="
               mt-1.5
-              font-display
+              font-zapf
               text-[15px]
               leading-[1.35]
               text-[#92909d]
@@ -1742,7 +1933,7 @@ export default function HomePage() {
           <p
             className="
               mt-1.5
-              font-display
+              font-zapf
               text-[15px]
               leading-[1.35]
               text-[#92909d]
@@ -1763,14 +1954,14 @@ export default function HomePage() {
 
 
       {/* Results */}
-      <section id="results" className="bg-[#03091b] px-6 py-20 text-center md:px-[7.5%] md:py-28">
+      {/* <section id="results" className="bg-[#03091b] px-6 py-20 text-center md:px-[7.5%] md:py-28">
         <SectionTitle eyebrow="Patient stories">Before &amp; After Results</SectionTitle>
         <p className="mx-auto mb-12 max-w-3xl font-display text-lg leading-relaxed text-[#e0dce5]">View selected patient cases and learn what may be possible. Results vary; images are shared only with appropriate patient authorization.</p>
         <div className="grid grid-cols-2 gap-3 text-center md:grid-cols-4 md:gap-5">
           {results.map(([title, image]) => <article key={title} className="bg-[#f5f3f6] text-[#080d1b]"><img src={image} alt={`Authorized patient case: ${title}`} loading="lazy" className="h-44 w-full object-cover sm:h-56 md:h-[260px]" /><h3 className="p-3 font-sans text-sm font-semibold md:text-base">{title}</h3></article>)}
         </div>
         <TextLink>View Results</TextLink>
-      </section>
+      </section> */}
 
       {/* Academy / skin treatments */}
       {/* <section id="academy" className="grid items-center gap-12 bg-cover bg-center px-6 py-20 md:grid-cols-2 md:gap-[6vw] md:px-[11%] md:py-28" style={{ backgroundImage: `linear-gradient(rgba(3,8,27,.9),rgba(3,8,27,.92)),url(${photos.skin})` }}>
@@ -1809,7 +2000,7 @@ export default function HomePage() {
 
     {/* ================= SOCIAL LINKS ================= */}
     <div>
-      <h3 className="font-display text-[32px] font-normal leading-none text-white md:text-[40px]">
+      <h3 className="font-zapf text-[32px] font-normal leading-none text-white md:text-[40px]">
         FOLLOW ME
       </h3>
 
@@ -1817,24 +2008,22 @@ export default function HomePage() {
         {[
           {
             name: "LinkedIn",
-            href: "#",
+            href: "https://www.linkedin.com/in/drgeoffreyvaz/",
           },
           {
             name: "Instagram",
-            href: "#",
+            href: "https://www.instagram.com/maven.esthetics/",
           },
           {
-            name: "Twitter",
-            href: "#",
-          },
-          {
-            name: "YouTube",
-            href: "#",
+            name: "Facebook",
+            href: "https://www.facebook.com/mavenestheticsindia",
           },
         ].map((social) => (
           <a
             key={social.name}
             href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="
               group
               flex
