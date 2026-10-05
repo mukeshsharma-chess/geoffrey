@@ -386,7 +386,7 @@ export default function HomePage() {
     >
       <p
         className="
-          font-display
+          font-zapf
           text-[28px]
           leading-tight
           text-[#eaa274]
