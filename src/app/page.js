@@ -13,10 +13,28 @@ const photos = {
   inject2: "/images/carosule1.jpg",
   inject3: "/images/carosule2.jpg",
   face: "/images/fivethsection.png",
-  wellness: "/images/seven.png",
+  face2: "/images/face.png",
+  laser: "/images/lASERS.jpg",
+  wellness: "/images/wellness.png",
   skin: "/images/eight.jpg",
+  dermat: "/images/dermat.png",
+  regen: "/images/regen.png",
   model: "/images/nine.jpg",
 };
+
+const mediaLogos = [
+  { src: "/images/media/vogue.png", alt: "Vogue" },
+  { src: "/images/media/peaklife.png", alt: "PeakLife" },
+  { src: "/images/media/vogue.png", alt: "Vogue" },
+  { src: "/images/media/chronicle.png", alt: "Chronicle" },
+  { src: "/images/media/grazia.png", alt: "Grazia" },
+  { src: "/images/media/cosmopolitan.png", alt: "Cosmopolitan" },
+  { src: "/images/media/hindustan-times.png", alt: "Hindustan Times" },
+  { src: "/images/media/economic-times.png", alt: "Economic Times" },
+  { src: "/images/media/bazaar.png", alt: "Bazaar" },
+  { src: "/images/media/freepress.png", alt: "Free Press Journal" },
+  { src: "/images/media/pod.png", alt: "The Pod" },
+];
 
 const injectables = [
   ["BOTOX & WRINKLE RELAXER", "Botox®, Dysport®, and Daxxify® micro-dosed to soften forehead bands, crow’s feet, and gummy smiles while preserving natural human expression.", photos.inject1],
@@ -169,61 +187,228 @@ export default function HomePage() {
 
 </section>
 
-    
-
-
-      <section
-        id="about"
-        className="grid min-h-screen items-center gap-8 bg-[#03091b] py-16 pl-[1.5%] pr-[7%] lg:grid-cols-[1.5fr_1fr] lg:gap-[4vw] lg:py-0"
+<section className="w-full overflow-hidden bg-[#03091b] py-5">
+  <div className="flex w-max animate-[media-scroll_28s_linear_infinite]">
+    {[...mediaLogos, ...mediaLogos].map((logo, index) => (
+      <div
+        key={`${logo.alt}-${index}`}
+        className="flex h-[70px] w-[180px] shrink-0 items-center justify-center px-6"
       >
-        {/* Left Image */}
-        <div className="w-full overflow-hidden aspect-[1.44]">
-          <img
-            src={photos.doctor}
-            alt="Dr. Geoffrey Vaz at his clinic"
-            className="h-full w-full object-cover object-center"
-            loading="lazy"
-          />
-        </div>
+        <img
+          src={logo.src}
+          alt={logo.alt}
+          className="max-h-[48px] max-w-[160px] object-contain"
+        />
+      </div>
+    ))}
+  </div>
+</section>
 
-        {/* Right Content */}
-        <div className="flex w-full flex-col justify-center">
 
-          {/* Heading */}
-          <h2 className="font-zapf whitespace-nowrap text-[clamp(28px,2.9vw,46px)] font-medium uppercase leading-tight tracking-[0.02em] text-[#eaa274]">
-            The Surgeon &amp; Artist
-          </h2>
 
-          {/* Quote */}
-          <blockquote className="my-7 border-l-2 border-[#eaa274] bg-[#11172b] px-6 py-4 font-sans text-base leading-[1.4] text-[#e0dce5]">
-            “Every incision is a sculpted stroke. We do not
-            mass-produce beauty — we unveil proportion that
-            honors natural biology.”
-          </blockquote>
+<section
+  id="about"
+  className="
+    my-8
+    grid
+    w-full
+    bg-[#03091b]
 
-          {/* Description */}
-          <p className="font-display text-lg leading-[1.6] text-[#e0dce5]">
-            Internationally acknowledged as one of the premier
-            aesthetic sculptors on the East Coast, Dr. Geoffrey
-            Vaz approaches plastic surgery through the lens of
-            classical Leonardo-esque proportions and
-            uncompromising medical integrity.
-          </p>
+    grid-cols-1
+    gap-10
 
-          {/* Signature */}
-          <div className="mt-14 text-right">
-            <p className="font-display text-[30px] leading-tight text-[#eaa274]">
-              <span className="mr-2">—</span>
-              Geoffrey Vaz, M.D.
-            </p>
+    px-6
+    py-12
 
-            <p className="mt-1 font-sans text-sm uppercase tracking-wide text-[#c3bdca]">
-              ABPS Diplomat • Quad-A Surgical Director
-            </p>
-          </div>
+    lg:my-[60px]
+    lg:grid-cols-[45%_55%]
+    lg:gap-0
+    lg:px-0
+    lg:py-0
+  "
+>
+  {/* ================= LEFT IMAGE ================= */}
+  <div
+    className="
+      relative
+      h-[500px]
+      w-full
+      overflow-hidden
 
-        </div>
-      </section>
+      lg:h-screen
+    "
+  >
+    <img
+      src={photos.doctor}
+      alt="Dr. Geoffrey Vaz at his clinic"
+      className="
+        h-full
+        w-full
+        object-cover
+        object-center
+      "
+      loading="lazy"
+    />
+  </div>
+
+  {/* ================= RIGHT CONTENT ================= */}
+  <div
+    className="
+      flex
+      w-full
+      flex-col
+      justify-between
+
+      px-0
+      py-0
+
+      lg:px-[7%]
+      lg:py-[3%]
+    "
+  >
+    {/* TOP CONTENT */}
+    <div>
+      {/* Heading */}
+      <h2
+        className="
+          font-zapf
+          text-[clamp(30px,3vw,48px)]
+          font-medium
+          uppercase
+          leading-[1.15]
+          tracking-[0.02em]
+          text-[#eaa274]
+        "
+      >
+        The Surgeon &amp; Artist
+      </h2>
+
+      {/* Quote */}
+      <blockquote
+        className="
+          mt-8
+          border-l-2
+          border-[#eaa274]
+          bg-[#11172b]
+          px-7
+          py-4
+          font-sans
+          text-[16px]
+          leading-[1.45]
+          text-[#e0dce5]
+        "
+      >
+        “Precision is my discipline, and subtlety is my signature.
+        I want you to look like yourself, at your best.”
+      </blockquote>
+
+      {/* Paragraph 1 */}
+      <p
+        className="
+          mt-8
+          font-display
+          text-[18px]
+          leading-[1.55]
+          text-[#e0dce5]
+        "
+      >
+        Facial Aesthetic Specialist and national and international
+        trainer educating doctors in advanced dermatology and
+        aesthetic techniques.
+      </p>
+
+      {/* Paragraph 2 */}
+      <p
+        className="
+          mt-6
+          font-display
+          text-[18px]
+          leading-[1.55]
+          text-[#e0dce5]
+        "
+      >
+        Mentored by global leaders Dr. Arthur Swift, Dr. Woffles Wu,
+        and Dr. Mauricio de Maio, Dr. Vaz emphasizes subtle, natural
+        results. His expertise spans medical dermatology, advanced
+        skin treatments, facial aesthetics, and hair restoration
+        using a holistic approach that links skin and hair health
+        to hormonal, metabolic, and lifestyle factors. He serves
+        underserved communities through R.K. Mission, Jeevan Jyoti,
+        and Prerna Healthcare.
+      </p>
+
+      {/* Paragraph 3 */}
+      <p
+        className="
+          mt-6
+          font-display
+          text-[18px]
+          leading-[1.55]
+          text-[#e0dce5]
+        "
+      >
+        A former footballer and athlete, he applies discipline and
+        precision to complex conditions like acne, eczema, and
+        psoriasis. He is also a trusted skin and hair expert for
+        Femina Miss India, Miss Diva, and Mr. India contestants,
+        supporting winners at international pageants including
+        Miss World, Miss Supranational, Miss Cosmoworld, and
+        Mr. World.
+      </p>
+
+      {/* Paragraph 4 */}
+      <p
+        className="
+          mt-6
+          font-display
+          text-[18px]
+          leading-[1.55]
+          text-[#e0dce5]
+        "
+      >
+        His insight into human behavior enriches his approach,
+        viewing dermatology as understanding the individual beyond
+        treatment.
+      </p>
+    </div>
+
+    {/* ================= SIGNATURE ================= */}
+    <div
+      className="
+        mt-10
+        text-left
+
+        lg:mt-12
+        lg:text-right
+      "
+    >
+      <p
+        className="
+          font-display
+          text-[28px]
+          leading-tight
+          text-[#eaa274]
+        "
+      >
+        <span className="mr-2">—</span>
+        Geoffrey Vaz, M.D.
+      </p>
+
+      <p
+        className="
+          mt-1
+          font-sans
+          text-[13px]
+          uppercase
+          tracking-wide
+          text-[#c3bdca]
+        "
+      >
+        ABPS Diplomat • Quad-A Surgical Director
+      </p>
+    </div>
+  </div>
+</section>
 
 
 
@@ -443,99 +628,396 @@ export default function HomePage() {
 
 
 
-<section className="w-full bg-[#03091b] px-6 py-16 text-[#e5e1e9] sm:px-10 md:px-[7.5%] md:py-24">
-  <div className="mx-auto grid max-w-[1600px] items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-[5vw]">
 
-    {/* Left Content */}
+<section
+  id="face"
+  className="
+    w-full
+    bg-[#03091b]
+    px-6
+    py-16
+    text-[#e5e1e9]
+
+    sm:px-10
+    md:px-[7.5%]
+    md:py-24
+  "
+>
+  <div
+    className="
+      mx-auto
+      grid
+      w-full
+      max-w-[1600px]
+      items-center
+      gap-12
+
+      lg:grid-cols-[1.02fr_0.98fr]
+      lg:gap-[5vw]
+    "
+  >
+    {/* ================= LEFT CONTENT ================= */}
     <div className="w-full">
-      <h2 className="mb-7 font-display text-4xl uppercase leading-tight text-[#eaa274] md:text-5xl">
+      {/* Heading */}
+      <h2
+        className="
+          mb-8
+          font-display
+          text-[42px]
+          uppercase
+          leading-none
+          text-[#eaa274]
+
+          md:text-[50px]
+        "
+      >
         Face
       </h2>
 
-      <div className="space-y-4 font-display text-base leading-[1.65] text-[#c9c5d0] md:text-lg">
-        <p>
-          Dr. geoffrey is putting Philadelphia body contouring on the map
-          with his unique and innovative approach to anatomical re-sculpting.
-          Internationally recognized as “Tuck Daddy”®, Dr. Subbio is globally
-          revered for his transformative Mommy Makeovers, high-definition
-          360° liposuction, and muscle-repair abdominoplasties.
-        </p>
+      {/* Intro */}
+      <p
+        className="
+          max-w-[760px]
+          font-display
+          text-[17px]
+          leading-[1.55]
+          text-[#d0ccd5]
 
-        <p>
-          Having traveled across global aesthetic capitals to master the
-          world’s most refined subcutaneous suture methods, his patients
-          experience minimal tension lines, natural belly-button restorations,
-          and breathtaking hourglass proportions.
-        </p>
-      </div>
+          md:text-[19px]
+        "
+      >
+        From the brow to the neckline, precise treatments that lift,
+        define and refresh while keeping you looking like yourself.
+      </p>
 
-      {/* Face Categories */}
-      <div className="mt-10 space-y-1">
-        {[
-          {
-            title: "Upper face",
-            description:
-              "Short-scar muscle plication and organic belly button preservation.",
-          },
-          {
-            title: "Mid face",
-            description:
-              "Cohesive breast reconstruction with circumferential abdominal contouring.",
-          },
-          {
-            title: "Lower Face",
-            description:
-              "Subdermal muscular etching, flank sculpting, and autologous fat transfer.",
-          },
-        ].map((item) => (
-          <button
-            key={item.title}
-            type="button"
-            className="group flex w-full items-center justify-between gap-4 border-b border-white/0 py-5 text-left"
+      {/* ================= FACE CATEGORIES ================= */}
+      <div className="mt-9 space-y-7">
+        {/* Upper Face */}
+        <div>
+          <h3
+            className="
+              font-sans
+              text-[18px]
+              font-semibold
+              leading-tight
+              tracking-wide
+              text-[#e8e4eb]
+
+              md:text-[21px]
+            "
           >
-            <span>
-              <span className="block font-sans text-lg text-[#e4dfe9] md:text-xl">
-                {item.title}
-              </span>
-              <span className="mt-1 block font-display text-sm leading-relaxed text-[#858493] md:text-base">
-                {item.description}
-              </span>
-            </span>
+            Upper face
+          </h3>
 
-            <span className="shrink-0 text-2xl text-[#eaa274] transition-transform group-hover:translate-x-1">
-              ›
-            </span>
-          </button>
-        ))}
-      </div>
-    </div>
+          <p
+            className="
+              mt-2
+              max-w-[760px]
+              font-display
+              text-[15px]
+              leading-[1.45]
+              text-[#858493]
 
-    {/* Right Image Card */}
-    <div className="relative mx-auto w-full max-w-[670px] bg-[#f2f0fb] p-[10px] pt-[32px] sm:p-[18px] sm:pt-[40px]">
-      <div className="relative aspect-[1.18/1] w-full overflow-hidden bg-[#17172b]">
-        <img
-          src={photos.model}
-          alt="Model showcasing aesthetic body contouring results"
-          loading="lazy"
-          className="h-full w-full object-cover object-center"
-        />
+              md:text-[17px]
+            "
+          >
+            Soften forehead lines, frown lines and the brow area, and
+            refresh the eyes, for a relaxed, rested expression.
+          </p>
+        </div>
 
-        {/* Image Caption */}
-        <div className="absolute bottom-0 left-0 right-0 bg-[#03091b]/95 px-5 py-6 sm:px-7">
-          <div className="flex items-center justify-between gap-4">
-            <p className="font-display text-base text-[#e5e1e9] sm:text-lg md:text-xl">
-              Mommy Makeover • 9-Month Follow-Up
-            </p>
+        {/* Mid Face */}
+        <div>
+          <h3
+            className="
+              font-sans
+              text-[18px]
+              font-semibold
+              leading-tight
+              tracking-wide
+              text-[#e8e4eb]
 
-            <span className="shrink-0 text-2xl text-[#eaa274]">
-              →
-            </span>
-          </div>
+              md:text-[21px]
+            "
+          >
+            Mid face
+          </h3>
+
+          <p
+            className="
+              mt-2
+              max-w-[760px]
+              font-display
+              text-[15px]
+              leading-[1.45]
+              text-[#858493]
+
+              md:text-[17px]
+            "
+          >
+            Restore cheek support and volume and smooth the under-eye
+            transition, for a lifted, harmonious centre of the face.
+          </p>
+        </div>
+
+        {/* Lower Face */}
+        <div>
+          <h3
+            className="
+              font-sans
+              text-[18px]
+              font-semibold
+              leading-tight
+              tracking-wide
+              text-[#e8e4eb]
+
+              md:text-[21px]
+            "
+          >
+            Lower Face
+          </h3>
+
+          <p
+            className="
+              mt-2
+              max-w-[760px]
+              font-display
+              text-[15px]
+              leading-[1.45]
+              text-[#858493]
+
+              md:text-[17px]
+            "
+          >
+            Define the jawline and chin, refine the lips and soften
+            lines around the mouth, for a balanced, elegant profile.
+          </p>
+        </div>
+
+        {/* Neck */}
+        <div>
+          <h3
+            className="
+              font-sans
+              text-[18px]
+              font-semibold
+              leading-tight
+              tracking-wide
+              text-[#e8e4eb]
+
+              md:text-[21px]
+            "
+          >
+            Neck
+          </h3>
+
+          <p
+            className="
+              mt-2
+              max-w-[760px]
+              font-display
+              text-[15px]
+              leading-[1.45]
+              text-[#858493]
+
+              md:text-[17px]
+            "
+          >
+            Smooth neck lines and bands and improve skin firmness,
+            for a more youthful, defined neckline.
+          </p>
         </div>
       </div>
     </div>
 
+    {/* ================= RIGHT IMAGE ================= */}
+    <div
+      className="
+        relative
+        w-full
+        overflow-hidden
+        border
+        border-white/20
+
+        aspect-square
+        lg:aspect-[1.02/1]
+      "
+    >
+      <img
+        src={photos.face2}
+        alt="Face aesthetic treatment"
+        loading="lazy"
+        className="
+          h-full
+          w-full
+          object-cover
+          object-center
+        "
+      />
+
+      {/* Bottom dark gradient */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-x-0
+          bottom-0
+          h-[45%]
+          bg-gradient-to-t
+          from-[#03091b]
+          via-[#03091b]/70
+          to-transparent
+        "
+      />
+    </div>
   </div>
+</section>
+
+<section
+  id="lasers"
+  className="
+    relative
+    isolate
+    min-h-[560px]
+    w-full
+    overflow-hidden
+    bg-[#03091b]
+    px-6
+    py-14
+    text-[#e0dce5]
+
+    md:min-h-[620px]
+    md:px-[7.5%]
+    md:py-16
+  "
+>
+  {/* Background Image */}
+  <div className="absolute inset-0 -z-20">
+    <img
+      src={photos.laser}
+      alt="Laser treatment"
+      className="h-full w-full object-cover object-center"
+      loading="lazy"
+    />
+  </div>
+
+  {/* Lighter Dark Overlay */}
+  <div
+    className="
+      absolute
+      inset-0
+      -z-10
+      bg-[#03091b]/55
+    "
+  />
+
+  {/* Lighter Gradient Overlay */}
+  <div
+    className="
+      absolute
+      inset-0
+      -z-10
+      bg-gradient-to-r
+      from-[#03091b]/65
+      via-[#03091b]/40
+      to-[#03091b]/50
+    "
+  />
+
+  {/* Main Content */}
+  <div
+    className="
+      relative
+      z-10
+      mx-auto
+      grid
+      w-full
+      max-w-[1600px]
+      items-start
+      gap-10
+
+      lg:grid-cols-[1.05fr_1fr]
+      lg:gap-[5vw]
+    "
+  >
+    {/* LEFT */}
+    <div
+      className="
+        grid
+        grid-cols-1
+        gap-x-10
+        gap-y-7
+        sm:grid-cols-2
+      "
+    >
+      {/* PICO */}
+      <div>
+        <h3 className="font-sans text-[20px] font-semibold uppercase text-[#eaa274]">
+          PICO
+        </h3>
+
+        <p className="mt-3 font-display text-[16px] leading-[1.45] text-[#c9c5d0] md:text-[17px]">
+          Harness ultra-short picosecond pulses to target pigmentation
+          and improve skin tone, texture, and clarity with minimal
+          downtime and precision along with tattoo removal.
+        </p>
+      </div>
+
+      {/* CO2 */}
+      <div>
+        <h3 className="font-sans text-[20px] font-semibold uppercase text-[#eaa274]">
+          CO2
+        </h3>
+
+        <p className="mt-3 font-display text-[16px] leading-[1.45] text-[#c9c5d0] md:text-[17px]">
+          Resurface and renew the skin with precision CO₂ laser
+          technology to improve scars, wrinkles, pigmentation,
+          texture, and overall skin quality.
+        </p>
+      </div>
+
+      {/* EXCIMER LASER */}
+      <div>
+        <h3 className="font-sans text-[20px] font-semibold uppercase text-[#eaa274]">
+          EXCIMER LASER
+        </h3>
+
+        <p className="mt-3 font-display text-[16px] leading-[1.45] text-[#c9c5d0] md:text-[17px]">
+          Targeted 308 nm phototherapy that precisely treats localized
+          skin conditions such as vitiligo, atopic dermatitis and
+          psoriasis while minimizing exposure to surrounding healthy
+          skin.
+        </p>
+      </div>
+
+      {/* DIODE */}
+      <div>
+        <h3 className="font-sans text-[20px] font-semibold uppercase text-[#eaa274]">
+          DIODE
+        </h3>
+
+        <p className="mt-3 font-display text-[16px] leading-[1.45] text-[#c9c5d0] md:text-[17px]">
+          Advanced laser technology for effective, long-lasting hair
+          reduction by precisely targeting hair follicles while
+          protecting the surrounding skin.
+        </p>
+      </div>
+    </div>
+
+    {/* RIGHT */}
+    <div className="pt-2 lg:pt-8">
+      <h2 className="font-display text-[48px] uppercase leading-none text-[#eaa274] md:text-[52px]">
+        Lasers
+      </h2>
+
+      <p className="mt-7 max-w-[700px] font-display text-[18px] leading-[1.45] text-[#e0dce5] md:text-[19px]">
+        Advanced laser technology that treats pigmentation, scars,
+        hair and chronic skin conditions with precision and minimal
+        downtime.
+      </p>
+    </div>
+  </div>
+
 </section>
 
 
@@ -558,7 +1040,7 @@ export default function HomePage() {
       </section> */}
 
       {/* Breast */}
-      <section id="breast" className="bg-[#03091b] px-6 py-20 text-center md:px-[7.5%] md:py-28">
+      {/* <section id="breast" className="bg-[#03091b] px-6 py-20 text-center md:px-[7.5%] md:py-28">
         <Eyebrow>Personalized surgical planning</Eyebrow>
         <h2 className="font-display text-4xl uppercase text-[#eaa274] sm:text-5xl">Breast Procedures</h2>
         <div className="mx-auto my-12 grid max-w-6xl items-center gap-5 md:grid-cols-[1fr_.78fr_1fr] md:gap-[3vw]">
@@ -568,7 +1050,7 @@ export default function HomePage() {
         </div>
         <p className="mx-auto max-w-3xl font-display text-base leading-relaxed text-[#c3bdca]">A consultation is required to determine whether a procedure is appropriate and to discuss risks, alternatives, and expected recovery.</p>
         <TextLink>Breast Procedures</TextLink>
-      </section>
+      </section> */}
 
       {/* Lasers */}
       {/* <section id="lasers" className="relative grid items-center gap-10 bg-[#10142b] bg-cover bg-center px-6 py-20 md:grid-cols-[.9fr_1.1fr] md:gap-[5vw] md:px-[7.5%] md:py-28" style={{ backgroundImage: `linear-gradient(rgba(3,8,27,.88),rgba(3,8,27,.88)),url(${photos.skin})` }}>
@@ -583,7 +1065,175 @@ export default function HomePage() {
         </div>
       </section> */}
 
-      <section
+
+           {/* Wellness */}
+
+
+{/* <section
+  id="wellness"
+  className="w-full bg-[#03091b] px-6 py-16 sm:px-10 md:px-[7.5%] md:py-24"
+>
+  <div className="mx-auto grid max-w-[1600px] items-center gap-12 md:grid-cols-2 md:gap-[5vw]">
+
+    <div className="w-full">
+      <h2 className="font-display text-4xl uppercase leading-tight text-[#eaa274] md:text-5xl">
+        Wellness
+      </h2>
+
+      <p className="mt-6 font-display text-base leading-[1.5] text-[#d0ccd6] md:text-lg">
+        Wellness treatments are on the rise globally, with research on how
+        to help patients live longer, be healthier, and recover faster from
+        surgical interventions. Subbio Plastic Surgery remains at the
+        forefront of integrative wellness, helping patients achieve healthy
+        vitality through physician-supervised weight loss management and
+        regenerative protocols.
+      </p>
+
+      <div className="mt-7 bg-black/25 px-6 py-6 md:px-7">
+        <h3 className="mb-5 font-sans text-lg font-semibold uppercase tracking-[0.12em] text-[#eaa274]">
+          Key Clinical Programs
+        </h3>
+
+        <ul className="grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2">
+          {[
+            "Physician-supervised wellness",
+            "Weight management",
+            "Regenerative protocols",
+            "Semaglutide / GLP-1",
+            "Tirzepatide",
+            "NAD+ Cellular Infusions",
+          ].map((item) => (
+            <li
+              key={item}
+              className="flex items-center gap-2.5 font-display text-sm text-[#ded9e2] md:text-base"
+            >
+              <CheckCircle2
+                size={17}
+                className="shrink-0 text-[#eaa274]"
+              />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="mt-8">
+        <TextLink>Semaglutide &amp; Peptide</TextLink>
+      </div>
+    </div>
+
+    <div className="relative h-[380px] w-full overflow-hidden sm:h-[480px] md:h-[min(40.5vw,584px)]">
+      <img
+        src={photos.wellness}
+        alt="Wellness editorial portrait"
+        loading="lazy"
+        className="h-full w-full object-cover object-center"
+      />
+    </div>
+
+  </div>
+</section> */}
+
+<section
+  id="wellness"
+  className="w-full bg-[#03091b] px-6 py-14 text-[#e5e1e9] sm:px-10 md:min-h-[850px] md:px-[7.5%] md:py-24"
+>
+  <div className="mx-auto grid max-w-[1600px] items-center gap-12 md:grid-cols-[1.05fr_1fr] md:gap-[5vw]">
+
+    {/* ================= LEFT CONTENT ================= */}
+    <div className="w-full">
+
+      {/* Heading */}
+      <h2 className="font-display text-4xl uppercase leading-tight text-[#eaa274] md:text-[50px]">
+        Wellness
+      </h2>
+
+      {/* Wellness Programs */}
+      <div className="mt-12 space-y-7 md:mt-12 md:space-y-7">
+
+        {/* Physician-supervised wellness */}
+        <div>
+          <h3 className="font-sans text-[20px] font-semibold leading-tight tracking-wide text-white md:text-[22px]">
+            Physician-supervised wellness
+          </h3>
+
+          <p className="mt-2 max-w-[700px] font-display text-[16px] leading-[1.45] text-[#9d9aa7] md:text-[17px]">
+            Personalized, evidence-based wellness programs guided by a
+            physician to support healthy ageing, vitality, metabolic health,
+            and overall well-being.
+          </p>
+        </div>
+
+        {/* Weight management */}
+        <div>
+          <h3 className="font-sans text-[20px] font-semibold leading-tight tracking-wide text-white md:text-[22px]">
+            Weight management
+          </h3>
+
+          <p className="mt-2 max-w-[700px] font-display text-[16px] leading-[1.45] text-[#9d9aa7] md:text-[17px]">
+            Personalized, physician-guided weight management focused on
+            sustainable results, metabolic health, and long-term well-being.
+          </p>
+        </div>
+
+        {/* Regenerative protocols */}
+        <div>
+          <h3 className="font-sans text-[20px] font-semibold leading-tight tracking-wide text-white md:text-[22px]">
+            Regenerative protocols
+          </h3>
+
+          <p className="mt-2 max-w-[700px] font-display text-[16px] leading-[1.45] text-[#9d9aa7] md:text-[17px]">
+            Physician-led therapies that support the body's natural repair
+            processes, recovery and long-term vitality.
+          </p>
+        </div>
+
+        {/* Semaglutide / GLP-1 / Tirzepatide */}
+        <div>
+          <h3 className="font-sans text-[20px] font-semibold leading-tight tracking-wide text-white md:text-[22px]">
+            Semaglutide / GLP-1 / Tirzepatide
+          </h3>
+
+          <p className="mt-2 max-w-[700px] font-display text-[16px] leading-[1.45] text-[#9d9aa7] md:text-[17px]">
+            Physician-guided GLP-1 and tirzepatide therapies to support
+            medically supervised weight management, metabolic health,
+            and sustainable lifestyle goals.
+          </p>
+        </div>
+
+        {/* NAD+ Cellular Infusions */}
+        <div>
+          <h3 className="font-sans text-[20px] font-semibold leading-tight tracking-wide text-white md:text-[22px]">
+            NAD+ Cellular Infusions
+          </h3>
+
+          <p className="mt-2 max-w-[700px] font-display text-[16px] leading-[1.45] text-[#9d9aa7] md:text-[17px]">
+            Physician-supervised cellular wellness infusions designed to
+            support energy metabolism, cellular function, recovery, and
+            healthy ageing.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    {/* ================= RIGHT IMAGE ================= */}
+    <div className="relative w-full overflow-hidden md:h-[588px] md:w-full">
+
+      <img
+        src={photos.wellness}
+        alt="Wellness treatment"
+        loading="lazy"
+        className="h-full w-full object-cover object-center"
+      />
+
+    </div>
+
+  </div>
+</section>
+
+
+<section
   id="skin"
   className="relative isolate min-h-[850px] w-full overflow-hidden bg-[#03091b] px-6 py-20 md:min-h-[900px] md:px-[7.5%] md:py-24"
 >
@@ -676,79 +1326,440 @@ export default function HomePage() {
 </section>
 
 
-
-      {/* Wellness */}
-
-
 <section
-  id="wellness"
-  className="w-full bg-[#03091b] px-6 py-16 sm:px-10 md:px-[7.5%] md:py-24"
+  id="dermat"
+  className="
+    w-full
+    bg-[#03091b]
+    px-6
+    py-14
+    text-[#e5e1e9]
+    sm:px-10
+    md:min-h-[850px]
+    md:px-[7.5%]
+    md:py-24
+  "
 >
-  <div className="mx-auto grid max-w-[1600px] items-center gap-12 md:grid-cols-2 md:gap-[5vw]">
+  <div
+    className="
+      mx-auto
+      grid
+      max-w-[1600px]
+      items-center
+      gap-12
+      md:grid-cols-[1.05fr_1fr]
+      md:gap-[5vw]
+    "
+  >
 
-    {/* LEFT CONTENT */}
+    {/* ================= LEFT CONTENT ================= */}
     <div className="w-full">
-      <h2 className="font-display text-4xl uppercase leading-tight text-[#eaa274] md:text-5xl">
-        Wellness
+
+      {/* Heading */}
+      <h2
+        className="
+          font-display
+          text-4xl
+          uppercase
+          leading-tight
+          text-[#eaa274]
+          md:text-[50px]
+        "
+      >
+        Dermat
       </h2>
 
-      <p className="mt-6 font-display text-base leading-[1.5] text-[#d0ccd6] md:text-lg">
-        Wellness treatments are on the rise globally, with research on how
-        to help patients live longer, be healthier, and recover faster from
-        surgical interventions. Subbio Plastic Surgery remains at the
-        forefront of integrative wellness, helping patients achieve healthy
-        vitality through physician-supervised weight loss management and
-        regenerative protocols.
-      </p>
+      {/* Treatments */}
+      <div className="mt-12 space-y-7">
 
-      {/* KEY CLINICAL PROGRAMS */}
-      <div className="mt-7 bg-black/25 px-6 py-6 md:px-7">
-        <h3 className="mb-5 font-sans text-lg font-semibold uppercase tracking-[0.12em] text-[#eaa274]">
-          Key Clinical Programs
-        </h3>
+        {/* Acne & Acne Scarring */}
+        <div>
+          <h3
+            className="
+              font-sans
+              text-[20px]
+              font-semibold
+              leading-tight
+              tracking-wide
+              text-white
+              md:text-[22px]
+            "
+          >
+            Acne &amp; Acne Scarring
+          </h3>
 
-        <ul className="grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2">
-          {[
-            "Physician-supervised wellness",
-            "Weight management",
-            "Regenerative protocols",
-            "Semaglutide / GLP-1",
-            "Tirzepatide",
-            "NAD+ Cellular Infusions",
-          ].map((item) => (
-            <li
-              key={item}
-              className="flex items-center gap-2.5 font-display text-sm text-[#ded9e2] md:text-base"
-            >
-              <CheckCircle2
-                size={17}
-                className="shrink-0 text-[#eaa274]"
-              />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+          <p
+            className="
+              mt-2
+              max-w-[700px]
+              font-display
+              text-[16px]
+              leading-[1.45]
+              text-[#9d9aa7]
+              md:text-[17px]
+            "
+          >
+            Medically led treatment that clears active breakouts,
+            calms inflammation and refines scars for smoother skin.
+          </p>
+        </div>
 
-      {/* CTA */}
-      <div className="mt-8">
-        <TextLink>Semaglutide &amp; Peptide</TextLink>
+        {/* Pigmentation & Melasma */}
+        <div>
+          <h3
+            className="
+              font-sans
+              text-[20px]
+              font-semibold
+              leading-tight
+              tracking-wide
+              text-white
+              md:text-[22px]
+            "
+          >
+            Pigmentation &amp; Melasma
+          </h3>
+
+          <p
+            className="
+              mt-2
+              max-w-[700px]
+              font-display
+              text-[16px]
+              leading-[1.45]
+              text-[#9d9aa7]
+              md:text-[17px]
+            "
+          >
+            Targeted protocols that even out skin tone and address
+            stubborn pigmentation safely, for every skin type.
+          </p>
+        </div>
+
+        {/* Hair & Scalp */}
+        <div>
+          <h3
+            className="
+              font-sans
+              text-[20px]
+              font-semibold
+              leading-tight
+              tracking-wide
+              text-white
+              md:text-[22px]
+            "
+          >
+            Hair &amp; Scalp
+          </h3>
+
+          <p
+            className="
+              mt-2
+              max-w-[700px]
+              font-display
+              text-[16px]
+              leading-[1.45]
+              text-[#9d9aa7]
+              md:text-[17px]
+            "
+          >
+            Diagnosis-led care for hair fall, thinning and scalp
+            conditions, built around the root cause rather than a
+            quick fix.
+          </p>
+        </div>
+
+        {/* Eczema, Psoriasis & Vitiligo */}
+        <div>
+          <h3
+            className="
+              font-sans
+              text-[20px]
+              font-semibold
+              leading-tight
+              tracking-wide
+              text-white
+              md:text-[22px]
+            "
+          >
+            Eczema, Psoriasis &amp; Vitiligo
+          </h3>
+
+          <p
+            className="
+              mt-2
+              max-w-[700px]
+              font-display
+              text-[16px]
+              leading-[1.45]
+              text-[#9d9aa7]
+              md:text-[17px]
+            "
+          >
+            Evidence-based care for chronic skin conditions,
+            including targeted Excimer phototherapy.
+          </p>
+        </div>
+
       </div>
     </div>
 
-    {/* RIGHT IMAGE */}
-    <div className="relative h-[380px] w-full overflow-hidden sm:h-[480px] md:h-[min(40.5vw,584px)]">
+    {/* ================= RIGHT IMAGE ================= */}
+    <div
+      className="
+        relative
+        h-[360px]
+        w-full
+        overflow-hidden
+        sm:h-[450px]
+        md:h-[574px]
+      "
+    >
       <img
-        src={photos.wellness}
-        alt="Wellness editorial portrait"
+        src={photos.dermat}
+        alt="Dermatology treatment"
         loading="lazy"
-        className="h-full w-full object-cover object-center"
+        className="
+          h-full
+          w-full
+          object-cover
+          object-center
+        "
       />
     </div>
 
   </div>
 </section>
 
+<section
+  id="regen"
+  className="
+    w-full
+    bg-[#03091b]
+    px-6
+    py-10
+    sm:px-8
+    md:px-[7.5%]
+    md:py-12
+  "
+>
+  <div
+    className="
+      mx-auto
+      grid
+      w-full
+      items-stretch
+      gap-8
+      md:grid-cols-[1fr_1fr]
+      md:gap-[1.8vw]
+    "
+  >
+
+    {/* ================= LEFT IMAGE ================= */}
+    <div
+      className="
+        relative
+        h-[420px]
+        w-full
+        overflow-hidden
+        sm:h-[500px]
+        md:h-[616px]
+      "
+    >
+      <img
+        src={photos.regen}
+        alt="Regenerative treatment"
+        loading="lazy"
+        className="
+          h-full
+          w-full
+          object-cover
+          object-center
+        "
+      />
+
+      {/* Bottom fade - same visual treatment as Figma */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-x-0
+          bottom-0
+          h-[28%]
+          bg-gradient-to-t
+          from-[#03091b]
+          via-[#03091b]/60
+          to-transparent
+        "
+      />
+    </div>
+
+    {/* ================= RIGHT CONTENT ================= */}
+    <div
+      className="
+        flex
+        min-h-[420px]
+        w-full
+        flex-col
+        justify-center
+        bg-[#020718]
+        px-7
+        py-10
+        sm:px-10
+        md:min-h-[616px]
+        md:px-[3.2vw]
+        md:py-12
+      "
+    >
+
+      {/* Heading */}
+      <h2
+        className="
+          font-display
+          text-[40px]
+          uppercase
+          leading-none
+          text-[#eaa274]
+          sm:text-[44px]
+          md:text-[46px]
+        "
+      >
+        Regen
+      </h2>
+
+      {/* Treatment List */}
+      <div className="mt-10 space-y-6 md:mt-9 md:space-y-5">
+
+        {/* PRP Facial */}
+        <div>
+          <h3
+            className="
+              font-sans
+              text-[19px]
+              font-medium
+              leading-tight
+              tracking-[0.02em]
+              text-white
+              md:text-[21px]
+            "
+          >
+            PRP Facial
+          </h3>
+
+          <p
+            className="
+              mt-1.5
+              font-display
+              text-[15px]
+              leading-[1.35]
+              text-[#92909d]
+              md:text-[16px]
+            "
+          >
+            Uses your own platelet-rich plasma to stimulate renewal,
+            improve texture and restore natural radiance.
+          </p>
+        </div>
+
+        {/* PRP Hair Therapy */}
+        <div>
+          <h3
+            className="
+              font-sans
+              text-[19px]
+              font-medium
+              leading-tight
+              tracking-[0.02em]
+              text-white
+              md:text-[21px]
+            "
+          >
+            PRP Hair Therapy
+          </h3>
+
+          <p
+            className="
+              mt-1.5
+              font-display
+              text-[15px]
+              leading-[1.35]
+              text-[#92909d]
+              md:text-[16px]
+            "
+          >
+            Supports follicle health and hair density using your
+            body's own growth factors.
+          </p>
+        </div>
+
+        {/* Exosome Therapy */}
+        <div>
+          <h3
+            className="
+              font-sans
+              text-[19px]
+              font-medium
+              leading-tight
+              tracking-[0.02em]
+              text-white
+              md:text-[21px]
+            "
+          >
+            Exosome Therapy
+          </h3>
+
+          <p
+            className="
+              mt-1.5
+              font-display
+              text-[15px]
+              leading-[1.35]
+              text-[#92909d]
+              md:text-[16px]
+            "
+          >
+            Advanced cell-signalling treatment that supports repair,
+            healing and overall skin quality.
+          </p>
+        </div>
+
+        {/* PDRN & Polynucleotides */}
+        <div>
+          <h3
+            className="
+              font-sans
+              text-[19px]
+              font-medium
+              leading-tight
+              tracking-[0.02em]
+              text-white
+              md:text-[21px]
+            "
+          >
+            PDRN &amp; Polynucleotides
+          </h3>
+
+          <p
+            className="
+              mt-1.5
+              font-display
+              text-[15px]
+              leading-[1.35]
+              text-[#92909d]
+              md:text-[16px]
+            "
+          >
+            Regenerative skin repair that improves hydration,
+            elasticity and texture for a healthier-looking complexion.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+ 
 
 
       {/* Results */}
@@ -792,6 +1803,184 @@ export default function HomePage() {
       </section> */}
 
 
+<footer className="w-full overflow-hidden bg-[#03091b] text-white">
+  {/* Top Footer Content */}
+  <div className="grid w-full grid-cols-1 gap-16 px-8 py-16 sm:px-10 md:grid-cols-[0.9fr_1.6fr] md:px-[7.5%] md:py-20">
+
+    {/* ================= SOCIAL LINKS ================= */}
+    <div>
+      <h3 className="font-display text-[32px] font-normal leading-none text-white md:text-[40px]">
+        FOLLOW ME
+      </h3>
+
+      <div className="mt-10 space-y-6">
+        {[
+          {
+            name: "LinkedIn",
+            href: "#",
+          },
+          {
+            name: "Instagram",
+            href: "#",
+          },
+          {
+            name: "Twitter",
+            href: "#",
+          },
+          {
+            name: "YouTube",
+            href: "#",
+          },
+        ].map((social) => (
+          <a
+            key={social.name}
+            href={social.href}
+            className="
+              group
+              flex
+              w-[260px]
+              items-center
+              justify-between
+              font-sans
+              text-[20px]
+              font-normal
+              text-[#c8c7d0]
+              transition-colors
+              duration-300
+              hover:text-white
+              md:text-[21px]
+            "
+          >
+            <span>{social.name}</span>
+
+            <span
+              className="
+                text-[25px]
+                leading-none
+                text-[#c8c7d0]
+                transition-transform
+                duration-300
+                group-hover:-translate-y-1
+                group-hover:translate-x-1
+              "
+            >
+              ↗
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    {/* ================= NAVIGATION ================= */}
+    <nav className="w-full">
+      {[
+        {
+          label: "HOME",
+          number: "01",
+          href: "#top",
+        },
+        {
+          label: "ABOUT",
+          number: "02",
+          href: "#about",
+        },
+        {
+          label: "SERVICES",
+          number: "03",
+          href: "#services",
+        },
+        {
+          label: "CONTACT",
+          number: "04",
+          href: "#contact",
+        },
+      ].map((item) => (
+        <a
+          key={item.label}
+          href={item.href}
+          className="
+            group
+            flex
+            h-[62px]
+            w-full
+            items-center
+            justify-between
+            border-b
+            border-[#3a3b45]
+            transition-colors
+            duration-300
+            hover:border-white/60
+          "
+        >
+          <span
+            className="
+              font-sans
+              text-[22px]
+              font-semibold
+              tracking-[0.14em]
+              text-white
+              transition-transform
+              duration-300
+              group-hover:translate-x-1
+              md:text-[25px]
+            "
+          >
+            {item.label}
+          </span>
+
+          <span
+            className="
+              font-sans
+              text-[20px]
+              font-normal
+              text-[#9b9ba5]
+            "
+          >
+            {item.number}
+          </span>
+        </a>
+      ))}
+    </nav>
+  </div>
+
+  {/* ================= LARGE NAME ================= */}
+  <div className="relative mt-4 w-full overflow-hidden px-4 sm:px-6 md:px-[7%]">
+    <div className="relative overflow-hidden">
+      <h2
+        className="
+          whitespace-nowrap
+          font-zapf
+          text-[clamp(80px,13vw,280px)]
+          font-medium
+          uppercase
+          leading-[0.8]
+          tracking-[-0.04em]
+          text-white
+        "
+      >
+        GEOFFREY VAZ
+      </h2>
+
+      {/* Bottom fade */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-x-0
+          bottom-0
+          h-[55%]
+          bg-gradient-to-t
+          from-[#03091b]
+          via-[#03091b]/85
+          to-transparent
+        "
+      />
+    </div>
+  </div>
+
+  {/* Bottom spacing */}
+  <div className="h-10 bg-[#03091b] md:h-14" />
+</footer>
  
       {/* Footer */}
       {/* <footer className="border-t border-[#eaa274]/30 bg-[#020614] px-6 py-16 text-center md:px-[7.5%]">
