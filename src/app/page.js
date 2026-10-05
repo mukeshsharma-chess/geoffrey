@@ -139,7 +139,7 @@ export default function HomePage() {
       <h2 className="font-display bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text text-transparent text-[clamp(27px,6.5vw,44px)] leading-[1.2] md:text-4xl lg:text-[3rem] md:leading-[1.25]">
         MD Dermatologist
         <br />
-        &amp; Medical Aesthetics Expert
+        & Medical Aesthetics Expert
       </h2>
 
       {/* Experience */}
@@ -158,7 +158,7 @@ export default function HomePage() {
   </div>
 
   {/* Doctor Image */}
-  <div className="pointer-events-none absolute bottom-0 right-0 z-10 flex h-[43%] w-[62%] items-end justify-end md:right-[12%] md:h-[92%] md:w-[55%] md:justify-center">
+  <div className="pointer-events-none absolute bottom-0 right-0 z-10 flex h-[43%] w-[62%] items-end justify-end md:right-[18%] md:h-[47%] md:w-[55%] md:justify-center">
     <img
       src={photos.hero}
       alt="Dr. Geoffrey Vaz"
@@ -792,74 +792,7 @@ export default function HomePage() {
       </section> */}
 
 
- <footer className="w-full overflow-hidden bg-[#03091b] text-[#f4f2f5]">
-  <div className="px-[6.8%] pt-[100px] pb-10">
-
-    {/* Top footer columns */}
-    <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-[10%]">
-
-      {/* Social links */}
-      <div>
-        <h3 className="mb-8 font-display text-[38px] font-normal leading-none">
-          FOLLOW ME
-        </h3>
-
-        <div className="max-w-[250px] space-y-5">
-          {[
-            ["LinkedIn", "#"],
-            ["Instagram", "#"],
-            ["Twitter", "#"],
-            ["YouTube", "#"],
-          ].map(([name, href]) => (
-            <a
-              key={name}
-              href={href}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center justify-between font-sans text-[21px] font-normal text-[#c5c5d0] transition-colors hover:text-white"
-            >
-              <span>{name}</span>
-              <span className="text-[27px] leading-none">↗</span>
-            </a>
-          ))}
-        </div>
-      </div>
-
-      {/* Footer navigation */}
-      <nav className="w-full">
-        {[
-          ["HOME", "#top", "01"],
-          ["ABOUT", "#about", "02"],
-          ["SERVICES", "#services", "03"],
-          ["CONTACT", "#contact", "04"],
-        ].map(([name, href, number]) => (
-          <a
-            key={name}
-            href={href}
-            className="flex items-center justify-between border-b border-[#42434e] py-[13px] transition-colors hover:text-[#eaa274]"
-          >
-            <span className="font-sans text-[27px] font-medium tracking-[0.09em] leading-none">
-              {name}
-            </span>
-
-            <span className="font-sans text-[22px] font-normal text-[#92939e]">
-              {number}
-            </span>
-          </a>
-        ))}
-      </nav>
-    </div>
-
-    {/* Large footer name */}
-    <div className="mt-[105px] w-full">
-      <h2
-        className="whitespace-nowrap bg-gradient-to-b from-[#d7d8df] via-[#9b9da7] to-[#03091b] bg-clip-text text-center font-display text-[clamp(65px,10.8vw,220px)] font-normal uppercase leading-[0.85] tracking-[-0.045em] text-transparent"
-      >
-        GEOFFREY VAZ
-      </h2>
-    </div>
-  </div>
-</footer>
+ 
       {/* Footer */}
       {/* <footer className="border-t border-[#eaa274]/30 bg-[#020614] px-6 py-16 text-center md:px-[7.5%]">
         <a href="#top" className="font-display text-2xl italic tracking-wider">Dr. Geoffrey Vaz</a>
