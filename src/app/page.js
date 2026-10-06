@@ -7,6 +7,7 @@ import {
 
 const photos = {
   hero: "/images/geoffrey2.png",
+  hero_mobile: "/images/geoffreymb.png",
   doctor: "/images/second.jpg",
   training: "/images/third.png",
   inject1: "/images/carosule.jpg",
@@ -207,25 +208,25 @@ export default function HomePage() {
 
      
 {/* Hero */}
-<section className="relative isolate flex min-h-[100svh] w-full items-start overflow-hidden bg-[radial-gradient(ellipse_at_72%_48%,#50133f_0%,#260b26_43%,#170818_100%)] px-6 pt-[110px] pb-[280px] md:h-screen md:min-h-[720px] md:items-center md:px-[8%] md:pt-[88px] md:pb-0">
+<section className="relative isolate flex min-h-[50svh] w-full items-start overflow-hidden bg-[radial-gradient(ellipse_at_72%_48%,#50133f_0%,#260b26_43%,#170818_100%)] px-4 pt-[105px] pb-8 md:h-screen md:min-h-[720px] md:items-center md:px-[8%] md:pt-[88px] md:pb-0">
 
   {/* Background overlay */}
   <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#120414]/20 to-transparent" />
 
   {/* Left Content */}
-  <div className="relative z-20 w-full md:w-[65%] md:-translate-y-2">
+  <div className="relative z-20 w-[58%] md:w-[65%] md:-translate-y-2">
 
     {/* Main Heading */}
     <div className="relative">
       <div className="relative">
 
         {/* GEOFFREY */}
-        <h1 className="relative z-10 whitespace-nowrap font-zapf text-[clamp(42px,10.5vw,82px)] leading-[0.95] font-medium tracking-normal uppercase text-white md:text-[131px] md:leading-[124px]">
+        <h1 className="relative z-10 whitespace-nowrap font-zapf text-[clamp(34px,10vw,82px)] leading-[0.95] font-medium tracking-normal uppercase text-white md:text-[131px] md:leading-[124px]">
           GEOFFREY
         </h1>
 
         {/* VAZ */}
-        <span className="absolute left-[57%] top-[62%] z-0 whitespace-nowrap font-zapf text-[clamp(40px,9vw,68px)] font-medium leading-[1.13] tracking-normal uppercase bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text text-transparent md:left-[63%] md:top-[62%] md:text-[clamp(42px,7.16vw,110px)]">
+        <span className="absolute left-[72%] top-[62%] z-0 whitespace-nowrap font-zapf text-[clamp(34px,8.5vw,68px)] font-medium leading-[1.13] tracking-normal uppercase bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text text-transparent md:left-[63%] md:top-[62%] md:text-[clamp(42px,7.16vw,110px)] md:left-[55%]">
           VAZ
         </span>
 
@@ -233,32 +234,49 @@ export default function HomePage() {
     </div>
 
     {/* Subtitle */}
-    <div className="relative z-10 mt-8 md:mt-10">
-      <h2 className="font-display bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text text-transparent text-[clamp(27px,6.5vw,44px)] leading-[1.2] md:text-4xl lg:text-[3rem] md:leading-[1.25]">
+    <div className="relative z-10 mt-6 md:mt-10">
+
+      <h2 className="font-display bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text text-transparent text-[clamp(24px,5vw,44px)] leading-[1.15] md:text-4xl lg:text-[3rem] md:leading-[1.25]">
         MD Dermatologist
         <br />
         & Medical Aesthetics Expert
       </h2>
 
       {/* Experience */}
-      <p className="mt-6 font-sans text-[15px] font-bold uppercase tracking-wider text-white sm:text-lg md:text-base">
-        15+ YEARS <span className="text-sm font-medium">OF EXPERIENCE</span>
+      <p className="mt-4 font-sans text-[11px] font-bold uppercase tracking-wider text-white sm:text-lg md:mt-6 md:text-base">
+        15+ YEARS <span className="text-[9px] font-medium sm:text-sm">OF EXPERIENCE</span>
       </p>
 
       {/* Consultation */}
-      <a href="#consult" className="mt-5 inline-flex h-[57px] w-[280px] items-center justify-center bg-white px-9 py-5 font-sans text-sm font-bold uppercase tracking-wide text-[#101326] shadow-lg transition-all duration-300">
-        Book Consultation</a>
+      <a
+        href="#consult"
+        className="mt-4 inline-flex h-[45px] w-[180px] items-center justify-center bg-white px-4 py-3 font-sans text-[11px] font-bold uppercase tracking-wide text-[#101326] shadow-lg transition-all duration-300 sm:h-[57px] sm:w-[280px] sm:px-9 sm:py-5 sm:text-sm"
+      >
+        Book Consultation
+      </a>
+
     </div>
   </div>
 
   {/* Doctor Image */}
-  <div className="pointer-events-none absolute bottom-0 right-0 z-10 flex h-[43%] w-[62%] items-end justify-end md:right-[18%] md:h-[47%] md:w-[55%] md:justify-center">
-    <img
-      src={photos.hero}
-      alt="Dr. Geoffrey Vaz"
-      fetchPriority="high"
-      className="h-full w-full origin-bottom object-contain object-bottom drop-shadow-2xl md:scale-[2]"
-    />
+  <div className="pointer-events-none absolute bottom-0 right-0 z-10 flex h-[93%] w-[48%] items-end justify-end md:right-[18%] md:h-[47%] md:w-[55%] md:justify-center">
+
+    <picture className="h-full w-full relative left-[20px]">
+      {/* Mobile image */}
+      <source
+        media="(max-width: 767px)"
+        srcSet={photos.hero_mobile}
+      />
+
+      {/* Desktop image */}
+      <img
+        src={photos.hero}
+        alt="Dr. Geoffrey Vaz"
+        fetchPriority="high"
+        className="h-full w-full origin-bottom object-contain object-bottom drop-shadow-2xl md:scale-[2]"
+      />
+    </picture>
+
   </div>
 
 </section>
@@ -268,12 +286,16 @@ export default function HomePage() {
     {[...mediaLogos, ...mediaLogos].map((logo, index) => (
       <div
         key={`${logo.alt}-${index}`}
-        className="flex h-[70px] min-w-[190px] shrink-0 items-center justify-center px-5 md:min-w-[210px] md:px-6"
+        className="flex h-[55px] min-w-[190px] shrink-0 items-center justify-center px-5 md:min-w-[220px] md:px-6 md:h-[75px]"
       >
         <img
           src={logo.src}
           alt={logo.alt}
-          className="block max-h-[58px] w-auto max-w-[190px] object-contain brightness-0 invert"
+          className={`block max-h-[58px] max-w-[185px] w-auto h-auto object-contain brightness-0 invert ${
+            ["Cosmopolitan", "Free Press Journal", "The Pod"].includes(logo.alt)
+              ? "scale-[1.35]"
+              : ""
+          }`}
         />
       </div>
     ))}
