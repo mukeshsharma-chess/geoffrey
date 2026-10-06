@@ -1363,7 +1363,7 @@ export default function HomePage() {
           className="
             font-sans
             text-[19px]
-            font-bold
+            font-semibold
             uppercase
             leading-[1.1]
             tracking-[0.02em]
@@ -1400,7 +1400,7 @@ export default function HomePage() {
           className="
             font-sans
             text-[19px]
-            font-bold
+            font-semibold
             uppercase
             leading-[1.1]
             tracking-[0.02em]
@@ -1437,7 +1437,7 @@ export default function HomePage() {
           className="
             font-sans
             text-[19px]
-            font-bold
+            font-semibold
             uppercase
             leading-[1.1]
             tracking-[0.02em]
@@ -1476,7 +1476,7 @@ export default function HomePage() {
           className="
             font-sans
             text-[19px]
-            font-bold
+            font-semibold
             uppercase
             leading-[1.1]
             tracking-[0.02em]
@@ -1514,7 +1514,7 @@ export default function HomePage() {
           className="
             font-sans
             text-[19px]
-            font-bold
+            font-semibold
             uppercase
             leading-[1.1]
             tracking-[0.02em]
@@ -1552,7 +1552,7 @@ export default function HomePage() {
           className="
             font-sans
             text-[19px]
-            font-bold
+            font-semibold
             uppercase
             leading-[1.1]
             tracking-[0.02em]
@@ -2143,11 +2143,6 @@ export default function HomePage() {
           label: "ABOUT",
           number: "02",
           href: "#about",
-        },
-        {
-          label: "SERVICES",
-          number: "03",
-          href: "#services",
         },
         {
           label: "CONTACT",
