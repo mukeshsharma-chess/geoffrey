@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
-  ArrowRight, ArrowLeft, ArrowUpRight, CheckCircle2, Play, Menu, X,
+  ArrowRight, ArrowLeft, Menu, X,
 } from "lucide-react";
 
 const photos = {
@@ -22,6 +22,7 @@ const photos = {
   dermat: "/images/dermat.png",
   regen: "/images/regen.png",
   model: "/images/nine.jpg",
+  trainingVideo: "/videos/training.mp4",
 };
 
 const mediaLogos = [
@@ -46,59 +47,59 @@ const injectables = [
   ["Nasal Tip and Nasal Flare", "Refine the nasal tip and soften nasal flare with precise, minimally invasive treatments designed to enhance nasal definition while preserving natural facial harmony.", photos.inject5]
 ];
 
-const skinTreatments = [
-  ["IPL (Intense Pulsed Light)", "Light-based treatment options for selected tone and pigmentation concerns."],
-  ["CHEMICAL PEELS", "Medical-grade peel options selected for individual skin concerns."],
-  ["DERMAFRAC", "A facial treatment approach focused on cleansing and hydration."],
-  ["HYDRAFACIAL", "A facial treatment focused on cleansing, exfoliation, and hydration."],
-  ["RF", "Explore radiofrequency-based skin treatment options."],
-  ["MNRF", "Discuss microneedling and radiofrequency treatment options."],
-  ["MICRONEEDLING", "Review collagen-induction treatment options with a clinician."],
-];
+// const skinTreatments = [
+//   ["IPL (Intense Pulsed Light)", "Light-based treatment options for selected tone and pigmentation concerns."],
+//   ["CHEMICAL PEELS", "Medical-grade peel options selected for individual skin concerns."],
+//   ["DERMAFRAC", "A facial treatment approach focused on cleansing and hydration."],
+//   ["HYDRAFACIAL", "A facial treatment focused on cleansing, exfoliation, and hydration."],
+//   ["RF", "Explore radiofrequency-based skin treatment options."],
+//   ["MNRF", "Discuss microneedling and radiofrequency treatment options."],
+//   ["MICRONEEDLING", "Review collagen-induction treatment options with a clinician."],
+// ];
 
-const bodyProcedures = [
-  ["Tummy Tuck (Abdominoplasty)", "Discuss abdominal contouring and muscle repair where appropriate."],
-  ["Comprehensive Mommy Makeover", "A coordinated plan based on individual anatomy and goals."],
-  ["High-Definition Liposuction", "Learn about body-contouring options and candidacy."],
-  ["Radiofrequency Skin Tightening", "Explore technology-based skin treatment options."],
-];
+// const bodyProcedures = [
+//   ["Tummy Tuck (Abdominoplasty)", "Discuss abdominal contouring and muscle repair where appropriate."],
+//   ["Comprehensive Mommy Makeover", "A coordinated plan based on individual anatomy and goals."],
+//   ["High-Definition Liposuction", "Learn about body-contouring options and candidacy."],
+//   ["Radiofrequency Skin Tightening", "Explore technology-based skin treatment options."],
+// ];
 
-const breastProcedures = [
-  [["Vertical Scar Mastopexy", "Review breast-lift techniques, goals, and potential trade-offs."],
-   ["Dual-Plane Augmentation", "Discuss implant options, placement, and individualized planning."]],
-  [["Lift + Implants", "Understand combined procedure planning and recovery considerations."],
-   ["Implant Removal & Recontouring", "Explore implant removal and reconstructive options with a surgeon."]],
-];
+// const breastProcedures = [
+//   [["Vertical Scar Mastopexy", "Review breast-lift techniques, goals, and potential trade-offs."],
+//    ["Dual-Plane Augmentation", "Discuss implant options, placement, and individualized planning."]],
+//   [["Lift + Implants", "Understand combined procedure planning and recovery considerations."],
+//    ["Implant Removal & Recontouring", "Explore implant removal and reconstructive options with a surgeon."]],
+// ];
 
-const laserTreatments = [
-  ["Halo Laser", "Hybrid fractional laser treatment options for selected skin concerns."],
-  ["Broadband Light (BBL)", "Light-based options for selected pigmentation and redness concerns."],
-  ["Forever Clear", "Discuss light-based approaches for acne-prone skin."],
-  ["Moxi Laser", "Explore gentle fractional laser options and recovery expectations."],
-];
+// const laserTreatments = [
+//   ["Halo Laser", "Hybrid fractional laser treatment options for selected skin concerns."],
+//   ["Broadband Light (BBL)", "Light-based options for selected pigmentation and redness concerns."],
+//   ["Forever Clear", "Discuss light-based approaches for acne-prone skin."],
+//   ["Moxi Laser", "Explore gentle fractional laser options and recovery expectations."],
+// ];
 
-const results = [
-  ["Tummy Tuck", photos.model],
-  ["Body Contouring", photos.face],
-  ["Facial Rejuvenation", photos.skin],
-  ["Injectables", photos.inject1],
-];
+// const results = [
+//   ["Tummy Tuck", photos.model],
+//   ["Body Contouring", photos.face],
+//   ["Facial Rejuvenation", photos.skin],
+//   ["Injectables", photos.inject1],
+// ];
 
-function Eyebrow({ children }) {
-  return <p className="mb-4 font-sans text-xs uppercase tracking-[.2em] text-[#eaa274]">{children}</p>;
-}
+// function Eyebrow({ children }) {
+//   return <p className="mb-4 font-sans text-xs uppercase tracking-[.2em] text-[#eaa274]">{children}</p>;
+// }
 
-function SectionTitle({ eyebrow, children }) {
-  return <div className="mb-10"><Eyebrow>{eyebrow}</Eyebrow><h2 className="font-display text-4xl uppercase leading-tight text-[#eaa274] sm:text-5xl lg:text-6xl">{children}</h2></div>;
-}
+// function SectionTitle({ eyebrow, children }) {
+//   return <div className="mb-10"><Eyebrow>{eyebrow}</Eyebrow><h2 className="font-display text-4xl uppercase leading-tight text-[#eaa274] sm:text-5xl lg:text-6xl">{children}</h2></div>;
+// }
 
-function TextLink({ children, href = "#consult" }) {
-  return <a href={href} className="mt-8 inline-flex items-center gap-3 border-b border-white/70 pb-2 font-sans text-xs font-semibold uppercase tracking-[.12em] transition hover:border-[#eaa274] hover:text-[#eaa274]">{children}<ArrowUpRight size={16} /></a>;
-}
+// function TextLink({ children, href = "#consult" }) {
+//   return <a href={href} className="mt-8 inline-flex items-center gap-3 border-b border-white/70 pb-2 font-sans text-xs font-semibold uppercase tracking-[.12em] transition hover:border-[#eaa274] hover:text-[#eaa274]">{children}<ArrowUpRight size={16} /></a>;
+// }
 
 export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [formSent, setFormSent] = useState(false);
+  // const [formSent, setFormSent] = useState(false);
   const trackRef = useRef(null);
 
   const moveCarousel = (direction) => {
@@ -106,26 +107,102 @@ export default function HomePage() {
     trackRef.current.scrollBy({ left: direction * trackRef.current.clientWidth * 0.8, behavior: "smooth" });
   };
 
+  function TrainingVideo() {
+    const videoRef = useRef(null);
+    const sectionRef = useRef(null);
+
+    useEffect(() => {
+      const section = sectionRef.current;
+      const video = videoRef.current;
+
+      if (!section || !video) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        },
+        {
+          threshold: 0.15,
+        }
+      );
+
+      observer.observe(section);
+
+      return () => {
+        observer.disconnect();
+      };
+    }, []);
+
+    return (
+      <div
+        ref={sectionRef}
+        className="group relative mx-auto aspect-[2/1] w-full max-w-[1360px] overflow-hidden bg-black"
+      >
+        <video
+          ref={videoRef}
+          src={photos.trainingVideo}
+          poster={photos.training}
+          muted
+          playsInline
+          preload="auto"
+          loop
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+
+        {/* Dark Overlay */}
+        <div className="pointer-events-none absolute inset-0 bg-[#03091b]/25 transition-opacity duration-500 group-hover:bg-[#03091b]/10" />
+      </div>
+    );
+  }
+
   const navItems = [
-    ["About", "#about"], ["Body", "#body"], ["Breast", "#breast"],
-    ["Lasers", "#lasers"], ["Injectables", "#injectables"],
-    ["Wellness", "#wellness"], ["Academy", "#academy"],
+    ["About", "#about"], ["Injectables", "#injectables"], 
+    ["Skin", "#skin"], ["Lasers", "#lasers"], ["Dermat", "#dermat"],
+    ["Wellness", "#wellness"], ["Regen", "#regen"],
   ];
 
   return (
     <main id="top" className="relative w-full min-h-screen overflow-x-hidden bg-[#03091b] text-[#f6f2f5]">
       {/* Header */}
-      <header className="absolute left-0 top-0 z-50 flex h-[76px] w-full items-center justify-between border-b border-white/15 bg-[#190518]/50 px-6 backdrop-blur-md md:h-[88px] md:px-[7.5%]">
-        <a href="#top" className="font-display whitespace-nowrap text-2xl italic tracking-wider">Dr. Geoffrey Vaz</a>
-        <button className="text-white md:hidden" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
+      <header className="fixed left-0 top-0 z-50 flex h-[76px] w-full items-center justify-between border-b border-white/15 bg-[#280C24] px-6 md:h-[88px] md:px-[7.5%]">
+        <a
+          href="#top"
+          className="font-display whitespace-nowrap text-2xl italic tracking-wider"
+        >
+          Dr. Geoffrey Vaz
+        </a>
+
+        <button
+          className="text-white md:hidden"
+          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           {menuOpen ? <X size={27} /> : <Menu size={27} />}
         </button>
-        <nav className={`${menuOpen ? "flex" : "hidden"} absolute left-0 right-0 top-full flex-col gap-5 border-b border-white/10 bg-[#170a20] px-6 py-6 md:static md:flex md:flex-row md:items-center md:gap-6 md:border-0 md:bg-transparent md:p-0`}>
-          {navItems.map(([label, href]) => <a key={href} href={href} onClick={() => setMenuOpen(false)} className="font-sans text-xs uppercase tracking-widest transition hover:text-[#eaa274]">{label}</a>)}
+
+        <nav
+          className={`${
+            menuOpen ? "flex" : "hidden"
+          } absolute left-0 right-0 top-full flex-col gap-5 border-b border-white/10 bg-[#280C24] px-6 py-6 md:static md:flex md:flex-row md:items-center md:gap-6 md:border-0 md:bg-transparent md:p-0`}
+        >
+          {navItems.map(([label, href]) => (
+            <a
+              key={href}
+              href={href}
+              onClick={() => setMenuOpen(false)}
+              className="font-sans text-xs uppercase tracking-widest transition hover:text-[#eaa274]"
+            >
+              {label}
+            </a>
+          ))}
         </nav>
       </header>
 
-      {/* Hero */}
 
 
      
@@ -205,7 +282,7 @@ export default function HomePage() {
 
 
 
-<section id="about" className="mt-[1px] mb-[10px] grid w-full bg-[#03091b] grid-cols-1 gap-4 p-[15px] lg:mt-[40px] lg:mb-[10px] lg:grid-cols-[637px_1fr] lg:gap-0 lg:px-0 lg:py-0">
+<section id="about" className="scroll-mt-[96px] mt-[1px] mb-[10px] grid w-full bg-[#03091b] grid-cols-1 gap-4 p-[15px] lg:mt-[40px] lg:mb-[10px] lg:grid-cols-[637px_1fr] lg:gap-0 lg:px-0 lg:py-0 md:scroll-mt-[108px]">
   {/* ================= LEFT IMAGE ================= */}
   <div
     className="
@@ -388,11 +465,33 @@ export default function HomePage() {
 
 
 {/* Training With Doctor Section */}
+
 <section
   id="training"
   className="w-full bg-[#03091b] px-6 pb-16 pt-10 md:px-[7.5%] md:pb-20 md:pt-30"
 >
   {/* Section Heading */}
+  <div className="mx-auto mb-9 max-w-5xl text-center">
+    <h2 className="font-zapf text-[24px] font-medium uppercase leading-tight tracking-wide text-[#eaa274] sm:text-4xl md:text-[46px]">
+      Training With Doctor
+    </h2>
+
+    <p className="mx-auto mt-5 max-w-5xl font-zapf text-base leading-relaxed text-[#d8d5df] sm:text-lg">
+      Not just another filler. Sculptra is a biostimulatory aesthetic
+      injectable that helps stimulate your own natural collagen
+      production to smooth facial wrinkles and improve skin tightness,
+      revealing a refreshed-looking you.
+    </p>
+  </div>
+
+  {/* Training Video */}
+  <TrainingVideo />
+</section>
+
+{/* <section
+  id="training"
+  className="w-full bg-[#03091b] px-6 pb-16 pt-10 md:px-[7.5%] md:pb-20 md:pt-30"
+>
   <div className="mx-auto mb-9 max-w-5xl text-center">
     <h2 className="font-zapf text-[24px] font-medium uppercase leading-tight tracking-wide text-[#eaa274] sm:text-4xl md:text-[46px] ">
       Training With Doctor
@@ -406,7 +505,6 @@ export default function HomePage() {
     </p>
   </div>
 
-  {/* Training Image / Video Poster */}
   <div className="group relative mx-auto w-full max-w-[1360px] overflow-hidden bg-black aspect-[2/1]">
 
     <img
@@ -416,10 +514,8 @@ export default function HomePage() {
       loading="lazy"
     />
 
-    {/* Dark Image Overlay */}
     <div className="absolute inset-0 bg-[#03091b]/45" />
 
-    {/* Center Play Icon */}
     <div className="absolute inset-0 flex items-center justify-center">
       <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-lg transition-transform duration-300 group-hover:scale-110 sm:h-[60px] sm:w-[60px]">
         <svg
@@ -433,7 +529,7 @@ export default function HomePage() {
     </div>
 
   </div>
-</section>
+</section> */}
 
 
 
@@ -460,7 +556,7 @@ export default function HomePage() {
 
 <section
   id="injectables"
-  className="w-full overflow-hidden bg-[#03091b] py-7 md:py-20 md:pl-[8%]"
+  className="scroll-mt-[96px] w-full overflow-hidden bg-[#03091b] py-7 md:py-20 md:pl-[8%] md:scroll-mt-[108px]"
 >
 
   <div className="mb-8 flex items-center justify-between pl-6 pr-6 md:mb-14">
@@ -521,10 +617,6 @@ export default function HomePage() {
       )
     )}
   </div>
-
-  {/* <div className="mt-10 flex justify-center md:mt-12">
-    <TextLink>View All Injectables</TextLink>
-  </div> */}
 </section>
 
 
@@ -847,6 +939,7 @@ export default function HomePage() {
 <section
   id="lasers"
   className="
+    scroll-mt-[96px]
     relative
     isolate
     min-h-[560px]
@@ -860,6 +953,7 @@ export default function HomePage() {
     md:min-h-[620px]
     md:px-[7.5%]
     md:py-16
+    md:scroll-mt-[108px]
   "
 >
   {/* Background Image */}
@@ -1043,7 +1137,7 @@ export default function HomePage() {
 
 <section
   id="wellness"
-  className="w-full bg-[#03091b] px-6 py-14 text-[#e5e1e9] sm:px-10 md:min-h-[850px] md:px-[7.5%] md:py-24"
+  className="scroll-mt-[96px] w-full bg-[#03091b] px-6 py-14 text-[#e5e1e9] sm:px-10 md:min-h-[850px] md:px-[7.5%] md:py-24 md:scroll-mt-[108px]"
 >
   <div className="mx-auto grid max-w-[1600px] items-center gap-12 md:grid-cols-[1.05fr_1fr] md:gap-[5vw]">
 
@@ -1143,6 +1237,7 @@ export default function HomePage() {
 <section
   id="skin"
   className="
+    scroll-mt-[96px]
     relative
     isolate
     h-auto
@@ -1159,6 +1254,7 @@ export default function HomePage() {
     md:min-h-0
     md:px-[7.5%]
     md:py-[105px]
+    md:scroll-mt-[108px]
   "
 >
   {/* ================= BACKGROUND IMAGE ================= */}
@@ -1493,6 +1589,7 @@ export default function HomePage() {
 <section
   id="dermat"
   className="
+    scroll-mt-[96px]
     w-full
     bg-[#03091b]
     px-6
@@ -1502,6 +1599,7 @@ export default function HomePage() {
     md:min-h-[850px]
     md:px-[7.5%]
     md:py-24
+    md:scroll-mt-[108px]
   "
 >
   <div
@@ -1698,6 +1796,7 @@ export default function HomePage() {
 <section
   id="regen"
   className="
+    scroll-mt-[96px]
     w-full
     bg-[#03091b]
     px-6
@@ -1705,6 +1804,7 @@ export default function HomePage() {
     sm:px-8
     md:px-[7.5%]
     md:py-12
+    md:scroll-mt-[108px]
   "
 >
   <div
