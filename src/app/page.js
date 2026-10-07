@@ -499,10 +499,8 @@ export default function HomePage() {
     </h2>
 
     <p className="mx-auto mt-5 max-w-5xl font-zapf text-base leading-relaxed text-[#d8d5df] sm:text-lg">
-      Not just another filler. Sculptra is a biostimulatory aesthetic
-      injectable that helps stimulate your own natural collagen
-      production to smooth facial wrinkles and improve skin tightness,
-      revealing a refreshed-looking you.
+      Dr. Vaz trains doctors to be correct, not just confident. Across 150+ workshops and 500+ doctors, his programmes teach the anatomical safety, 
+      complication management and clinical decision-making that most short courses skip.
     </p>
   </div>
 
@@ -2089,7 +2087,7 @@ export default function HomePage() {
 
 <footer className="w-full overflow-hidden bg-[#03091b] text-white">
   {/* Top Footer Content */}
-  <div className="grid w-full grid-cols-1 gap-16 px-8 py-16 sm:px-10 md:grid-cols-[0.9fr_1.6fr] md:px-[7.5%] md:py-20">
+  <div className="grid w-full grid-cols-1 gap-12 px-8 py-[16px] sm:px-10 md:grid-cols-[0.9fr_1.6fr] md:px-[7.5%] md:py-20">
 
     {/* ================= SOCIAL LINKS ================= */}
     <div>
@@ -2168,7 +2166,7 @@ export default function HomePage() {
         },
         {
           label: "CONTACT",
-          number: "04",
+          number: "03",
           href: "#contact",
         },
       ].map((item) => (
@@ -2227,7 +2225,7 @@ export default function HomePage() {
         className="
           whitespace-nowrap
           font-zapf
-          text-[clamp(80px,13vw,280px)]
+          text-[clamp(54px,13vw,280px)]
           font-medium
           uppercase
           leading-[0.8]
